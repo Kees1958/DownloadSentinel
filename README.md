@@ -16,6 +16,7 @@ _________________________  PERMISSIONS
 3. Host permission for wwww.virustotal.com - because it checks the reputation of the download URL
 
 _________________________  PRIVACY
+
 Only the download URL is handled over to Virus Total when it is a risky download and NOT on the whitelist.
 Normal downloads (PDF's word documents, spreadsheets, powerpoints, movies, pictures, etc) are skipped. 
 It does not monitor nor save or transmit any of the URL's your are visiting. 
