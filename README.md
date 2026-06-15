@@ -13,8 +13,7 @@ _________________________  PERMISSIONS
 
 1. Download - because it has to intercept downloads
 2. Storage  - because it saves your personal Virus Total API key and a small (max 10) domain whitelist
-3. Tabs     - because I am 67 years old and am stuggling with the code circumvent tabs permissons (I have to update the warning page with the VT result) I will try to remove it in final release
-4. Host permission for wwww.virustotal.com - because it checks the reputation of the download URL
+3. Host permission for wwww.virustotal.com - because it checks the reputation of the download URL
 
 _________________________  PRIVACY
 Only the download URL is handled over to Virus Total when it is a risky download and NOT on the whitelist.
@@ -27,7 +26,6 @@ _________________________ What you need to set in the OPTIONS
 3. You can change the back ground color of the warning page
 
 _________________________ Further development
-As said other internal mechanism to omit the TABS permission.
 I am not adding multi language support, it is an extension for personal use which I making available to others.
 I am using Brave (Chromium) so not planning to make a Firefox version.
 
