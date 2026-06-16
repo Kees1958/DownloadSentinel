@@ -26,7 +26,6 @@ _________________________ What you need to set in the OPTIONS
 1. Signup to Virus Total to get a free API key (required)
 2. Enter up to 12 domains which are white listed and/or change the background color (optional)
 
-_
 <img width="710" height="764" alt="image" src="https://github.com/user-attachments/assets/880c41e0-da3c-4f80-961e-8f79de3902ed" />
 
 _________________________ Further development
@@ -37,8 +36,6 @@ https://github.com/Kees1958/DownloadSentinel/issues
 _________________________ Why use it?
 
 For people only using the default Safe Browsing protection in Chromium based browsers for privacy reasons, this extensiin fills in some gaps: got to https://testsafebrowsing.appspot.com/
-
-_
 
 <img width="1092" height="485" alt="image" src="https://github.com/user-attachments/assets/11e48f6d-3a34-42a7-b84b-efd1804bd8c0" />
 
