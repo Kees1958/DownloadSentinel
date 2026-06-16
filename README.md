@@ -30,6 +30,8 @@ _________________________ Further development
 I am not adding multi language support, it is an extension for personal use which I making available to others.
 I am using Brave (Chromium) so not planning to make a Firefox version.
 
+
+
 <img width="710" height="764" alt="image" src="https://github.com/user-attachments/assets/880c41e0-da3c-4f80-961e-8f79de3902ed" />
 
 
