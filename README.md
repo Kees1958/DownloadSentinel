@@ -29,8 +29,7 @@ _________________________ What you need to set in the OPTIONS
 
 _________________________ Further development
 
-I am not adding multi language support, it is an extension for personal use which I making available to others.
-I am using Brave (Chromium) so not planning to make a Firefox version.
+I am not adding multi language support and not planning to make a Firefox version.
 
 
 _
