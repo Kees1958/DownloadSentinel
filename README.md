@@ -35,7 +35,7 @@ https://github.com/Kees1958/DownloadSentinel/issues
 
 _________________________ Why use it?
 
-For people only using the default Safe Browsing protection in Chromium based browsers for privacy reasons, this extensiin fills in some gaps: got to https://testsafebrowsing.appspot.com/
+For people only using the default Safe Browsing protection in Chromium based browsers for privacy reasons, this extension fills in some gaps: go to https://testsafebrowsing.appspot.com/ to check for yourself.
 
 <img width="1092" height="485" alt="image" src="https://github.com/user-attachments/assets/11e48f6d-3a34-42a7-b84b-efd1804bd8c0" />
 
