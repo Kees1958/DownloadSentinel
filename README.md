@@ -12,8 +12,8 @@ The same check is performed for ANY downloaded file coming from a domain which i
 _________________________  PERMISSIONS 
 
 1. Download - because it has to intercept downloads
-2. Storage  - because it saves your personal Virus Total API key and a small (max 10) domain whitelist
-3. Host permission for wwww.virustotal.com - because it checks the reputation of the download URL
+2. Storage  - because it saves your Virus Total API key and domain whitelist
+3. Host permission for wwww.virustotal.com - because it checks the reputation of the download URL at VT
 
 _________________________  PRIVACY
 
