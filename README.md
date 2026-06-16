@@ -22,13 +22,18 @@ Normal downloads (PDF's word documents, spreadsheets, powerpoints, movies, pictu
 It does not monitor nor save or transmit any of the URL's your are visiting. 
 
 _________________________ What you need to set in the OPTIONS 
+
 1. Signup to Virus Total to get a free license key
 2. Enter up to 12 domains which are white listed.
 3. You can change the back ground color of the warning page
 
 _________________________ Further development
+
 I am not adding multi language support, it is an extension for personal use which I making available to others.
 I am using Brave (Chromium) so not planning to make a Firefox version.
+
+
+_
 
 
 
