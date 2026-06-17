@@ -20,7 +20,8 @@ _________________________ Using the extension
 
 1. It runs in the background doing its job in the background with minimal CPU usage. 
 2. The banner shows the status of the extension
-<img width="267" height="182" alt="image" src="https://github.com/user-attachments/assets/ccbbd34f-87fb-4ff4-9bc2-62fd8cf99b02" />
+<img width="838" height="275" alt="image" src="https://github.com/user-attachments/assets/799ce443-99f7-4c92-88d4-9b4bbcd12c17" />
+
 
 
 _________________________  PERMISSIONS 
