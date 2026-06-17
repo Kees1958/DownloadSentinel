@@ -19,7 +19,7 @@ _________________________ What you need to set in the OPTIONS
 _________________________ Using the extension
 
 1. It runs in the background doing its job in the background with minimal CPU usage. 
-2. The banner shows the status of the extension
+2. Click on the Download Sentinal icon and the banner shows the status of the extension.
 <img width="838" height="275" alt="image" src="https://github.com/user-attachments/assets/799ce443-99f7-4c92-88d4-9b4bbcd12c17" />
 
 
