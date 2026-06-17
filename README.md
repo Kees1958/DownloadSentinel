@@ -1,5 +1,5 @@
 When an executable or compressed file is downloaded which does not come from a (user determined) whitelist or the build-in whitelist,
-It shows a warning page and checks the download URL reputation on Virus Total and updates the warning page.
+It shows a warning page and checks the download URL reputation on Virus Total and updates the warning page with the results found for the download URL.
 The user can decide to cancel & go back or ignore & proceed
 
 The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL
