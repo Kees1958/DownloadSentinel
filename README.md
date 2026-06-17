@@ -16,7 +16,11 @@ _________________________ What you need to set in the OPTIONS
 
 <img width="704" height="738" alt="image" src="https://github.com/user-attachments/assets/ddf86e2d-d5d7-4141-833b-efc7f4a9f441" />
 
+_________________________ Using the extension
 
+1. It runs in the background doing its job in the background with minimal CPU usage. 
+2. The banner shows the status of the extension
+<img width="267" height="182" alt="image" src="https://github.com/user-attachments/assets/ccbbd34f-87fb-4ff4-9bc2-62fd8cf99b02" />
 
 
 _________________________  PERMISSIONS 
