@@ -37,6 +37,7 @@ _________________________  PRIVACY
 Only the download URL is handled over to Virus Total when it is an executable or compressed file download and NOT on the whitelist.
 Normal downloads (PDF's word documents, spreadsheets, powerpoints, movies, pictures, etc) are skipped. 
 It does not monitor nor save or transmit any of the URL's your are visiting. 
+
 _________________________ Further development
 
 I am not adding multi language support and not planning to make a Firefox version, but I will have a look at issues posted
