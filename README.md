@@ -1,7 +1,3 @@
-This is the release candidate of en extension to help protect against risky downloads.
-
-The extension uses an internal list of Windows/Mac/Linux executables, compressed files and domains often used to spread malware.
-
 When an executable or compressed file is downloaded which does not come from a (user determined) whitelist or the build-in whitelist,
 It shows a warning page and checks the download URL reputation on Virus Total and updates the warning page.
 The user can decide to cancel & go back or ignore & proceed
