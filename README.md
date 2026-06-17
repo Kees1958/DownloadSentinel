@@ -2,7 +2,7 @@ When an executable or compressed file is downloaded which does not come from a (
 It shows a warning page and checks the download URL reputation on Virus Total and updates the warning page.
 The user can decide to cancel & go back or ignore & proceed
 
-The warning page shows a risk score which is determined on the information available on Virus Total of the download URL
+The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL
 
 <img width="828" height="812" alt="image" src="https://github.com/user-attachments/assets/ac68f079-4691-45ff-bd25-3030747251ba" />
 
