@@ -40,7 +40,7 @@ It does not monitor nor save or transmit any of the URL's your are visiting.
 
 _________________________ Further development
 
-I am not adding multi language support and not planning to make a Firefox version, but I will have a look at issues posted
+I am not adding multi language support and not planning to make a Firefox version, but I will check issues posted
 https://github.com/Kees1958/DownloadSentinel/issues
 
 _________________________ Why use it?
