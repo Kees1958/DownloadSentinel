@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download Sentinel</title>
+<link rel="stylesheet" href="WarningPage.css">
+</head>
+
+<body>
+
+<div class="top-banner">
+    <div class="logo-box">
+        <img src="../../assets/icons/icon128.png" alt="Download Protection">
+    </div>
+    <div class="banner-title">Download Sentinel</div>
+</div>
+
+<div class="content">
+    <div class="card">
+
+        <h1>Warning: potentially harmful download</h1>
+
+        <p class="subtitle">
+            The file type is either an executable or a compressed file or comes from a legitemate domain often used for spreading malware.
+
+        </p>
+
+        <div class="info-box">
+            <span class="label">Detected file type</span>
+            <span class="value" id="reasonText">Loading...</span>
+        </div>
+
+        <div class="info-box">
+            <span class="label">Downloaded from</span>
+            <span class="value" id="srcUrl">Loading...</span>
+        </div>
+
+        <div class="info-box">
+            <span class="label">URL Reputation Check Result</span>
+            <span class="value" id="bpResult">Not (yet) checked</span>
+        </div>
+
+        <div class="info-box" id="scoreBox" style="display:none;">
+            <span class="label">Risk Score (from -100 to +100)</span>
+            <div class="score-bar-row">
+                <span class="score-bar-value" id="scoreValue">—</span>
+                <div class="score-bar-track">
+                    <div class="score-bar-fill" id="scoreBarFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box" id="breakdownBox" style="display:none;">
+            <span class="label">Score Breakdown</span>
+            <ul class="breakdown-list" id="breakdownList"></ul>
+        </div>
+
+        <div class="actions">
+            <button id="btn-back">Cancel &amp; go back</button>
+            <button id="btn-allow">Ignore &amp; proceed</button>
+        </div>
+
+        <p class="disclaimer" id="disclaimerText">
+            <!-- filled dynamically by WarningPage.js -->
+        </p>
+
+    </div>
+</div>
+
+<script src="../../util/Storage.js"></script>
+<script src="../../util/Settings.js"></script>
+<script src="WarningPage.js"></script>
+
+</body>
+</html>
