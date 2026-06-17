@@ -1,0 +1,235 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after { box-sizing: border-box; }
+
+body, html {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    background-color: rgb(40, 40, 40);
+    color: rgb(220, 220, 220);
+}
+
+/* ===== Banner ===== */
+.banner {
+    display: flex;
+    align-items: center;
+    padding: 0 16px 0 0;
+    gap: 12px;
+    transition: background-color 0.3s;
+    background-color: rgb(243, 186, 34); /* default: no-key (yellow) until JS applies state */
+}
+
+.banner.state-no-key { background-color: rgb(243, 186, 34); }
+.banner.state-ready  { background-color: rgb(50, 205, 50); }
+
+.logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.banner-text {
+    flex: 1;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* ===== Page layout ===== */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 28px 16px 48px;
+}
+
+.options-card {
+    width: 100%;
+    max-width: 680px;
+    background: rgb(0, 0, 0);
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+}
+
+/* ===== Section headers ===== */
+.section-header h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(243, 186, 34);
+    margin: 0 0 6px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid rgb(65, 65, 65);
+    margin: 22px 0;
+}
+
+/* ===== Unlock text ===== */
+.unlock-text {
+    margin: 0 0 14px;
+    font-size: 13px;
+    color: rgb(256, 256, 256);
+    line-height: 1.55;
+}
+
+.link-yellow {
+    color: rgb(243, 186, 34);
+    text-decoration: none;
+    font-weight: 600;
+}
+.link-yellow:hover { text-decoration: underline; }
+
+/* ===== API key block ===== */
+.api-key-block {
+    margin-bottom: 4px;
+}
+
+.api-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.api-input {
+    flex: 1;
+    background: rgb(0, 0, 0);
+    border: 1px solid rgb(90, 90, 90);
+    border-radius: 6px;
+    color: rgb(240, 240, 240);
+    font-size: 13px;
+    font-family: monospace;
+    padding: 7px 10px;
+    outline: none;
+    min-width: 0;
+    transition: border-color 0.15s;
+}
+.api-input:focus { border-color: rgb(243, 186, 34); }
+
+.api-msg {
+    font-size: 12px;
+    min-height: 16px;
+    margin-top: 3px;
+    margin-bottom: 6px;
+}
+.api-msg.success { color: rgb(80, 210, 80); }
+.api-msg.error   { color: rgb(220, 70, 70); }
+.api-msg.info    { color: rgb(160, 160, 160); }
+
+/* ===== (VT switch moved to popup) ===== */
+
+/* ===== Locked sections ===== */
+.section.locked {
+    opacity: 0.38;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.3s;
+}
+.section.unlocked {
+    opacity: 1;
+    pointer-events: auto;
+    user-select: auto;
+}
+
+/* ===== Color picker ===== */
+.opt-hint {
+    font-size: 12px;
+    color: rgb(160, 160, 160);
+    margin: 0 0 12px;
+    line-height: 1.55;
+}
+
+.mono {
+    font-family: monospace;
+    background: rgb(55, 55, 55);
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.color-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.color-label {
+    font-size: 13px;
+    color: rgb(200, 200, 200);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.color-input {
+    width: 64px;
+    background: rgb(58, 58, 58);
+    border: 1px solid rgb(90, 90, 90);
+    border-radius: 5px;
+    color: rgb(240, 240, 240);
+    font-size: 13px;
+    padding: 5px 7px;
+    outline: none;
+    -moz-appearance: textfield;
+    transition: border-color 0.15s;
+}
+.color-input::-webkit-outer-spin-button,
+.color-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.color-input:focus { border-color: rgb(243, 186, 34); }
+
+.color-preview {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    border: 2px solid rgb(80, 80, 80);
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+}
+
+/* ===== Domain grid ===== */
+.domain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.domain-input {
+    background: rgb(58, 58, 58);
+    border: 1px solid rgb(90, 90, 90);
+    border-radius: 5px;
+    color: rgb(240, 240, 240);
+    font-size: 13px;
+    font-family: monospace;
+    padding: 6px 9px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.15s;
+}
+.domain-input:focus  { border-color: rgb(243, 186, 34); }
+.domain-input.valid  { border-color: rgb(50, 205, 50); }
+.domain-input.invalid{ border-color: rgb(220, 70, 70); }
+
+/* ===== Buttons ===== */
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 14px;
+    transition: filter 0.15s;
+    white-space: nowrap;
+    color: #fff;
+}
+.btn:hover { filter: brightness(0.85); }
+
+.btn-save      { background-color: rgb(243, 186, 34); }
+.btn-clear     { background-color: rgb(110, 110, 110); }
+.btn-save-opt  { background-color: rgb(243, 186, 34); margin-top: 2px; }
