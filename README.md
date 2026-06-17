@@ -12,6 +12,16 @@ The warning page shows a risk score which is determined on the information avail
 
 
 
+_________________________ What you need to set in the OPTIONS 
+
+1. Signup to Virus Total to get a free API key (required)
+2. Enter up to 12 domains which are white listed and/or change the background color (optional)
+
+<img width="704" height="738" alt="image" src="https://github.com/user-attachments/assets/ddf86e2d-d5d7-4141-833b-efc7f4a9f441" />
+
+
+
+
 _________________________  PERMISSIONS 
 
 1. Download - because it has to intercept downloads
@@ -24,14 +34,6 @@ _________________________  PRIVACY
 Only the download URL is handled over to Virus Total when it is an executable or compressed file download and NOT on the whitelist.
 Normal downloads (PDF's word documents, spreadsheets, powerpoints, movies, pictures, etc) are skipped. 
 It does not monitor nor save or transmit any of the URL's your are visiting. 
-
-_________________________ What you need to set in the OPTIONS 
-
-1. Signup to Virus Total to get a free API key (required)
-2. Enter up to 12 domains which are white listed and/or change the background color (optional)
-
-<img width="704" height="738" alt="image" src="https://github.com/user-attachments/assets/ddf86e2d-d5d7-4141-833b-efc7f4a9f441" />
-
 _________________________ Further development
 
 I am not adding multi language support and not planning to make a Firefox version, but I will have a look at issues posted
