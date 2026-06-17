@@ -14,9 +14,9 @@ The warning page shows a risk score which is determined on the information avail
 
 _________________________ What you need to set in the OPTIONS 
 
-1. Signup to Virus Total to get a free API key (required)
+1. Signup to Virus Total to get a free API key and enter the key (required)
 2. Change the background color of the warning screen, which defaults to Google Safe Browsing (optional)
-3. Enter up to 12 domains which are white listed and/or change the background color (optional)
+3. Enter up to 12 domains which are white listed to skip the download check of executables and archives for these websites (optional)
 
 <img width="704" height="738" alt="image" src="https://github.com/user-attachments/assets/ddf86e2d-d5d7-4141-833b-efc7f4a9f441" />
 
