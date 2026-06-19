@@ -4,7 +4,7 @@ The user can decide to cancel & go back or ignore & proceed
 
 The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL
 
-<img width="828" height="812" alt="image" src="https://github.com/user-attachments/assets/ac68f079-4691-45ff-bd25-3030747251ba" />
+<img width="835" height="829" alt="image" src="https://github.com/user-attachments/assets/023cbb02-e1f8-47ec-9912-a24a87c3c20f" />
 
 
 
@@ -40,8 +40,10 @@ It does not monitor nor save or transmit any of the URL's your are visiting.
 
 _________________________ Further development
 
-I am not adding multi language support and not planning to make a Firefox version, but I will check issues posted
-https://github.com/Kees1958/DownloadSentinel/issues
+I will check issues posted https://github.com/Kees1958/DownloadSentinel/issues and add a second (more permissive) risk scoring mechanism.
+I am not planning to add multi language or firefox support.
+
+
 
 _________________________ Why use it?
 
