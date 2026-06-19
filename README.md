@@ -46,6 +46,7 @@ Next version will have a second (more permissive) risk scoring mechanism and a s
 I am not planning to add multi language or firefox support. 
 
 _________________________ Issues or suggestions
+
 Please post issues or suggestions on https://github.com/Kees1958/DownloadSentinel/issues.
 
 
