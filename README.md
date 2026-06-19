@@ -2,7 +2,8 @@ When an executable or compressed file is downloaded which does not come from a (
 It shows a warning page and checks the download URL reputation on Virus Total and updates the warning page with the results found for the download URL.
 The user can decide to cancel & go back or ignore & proceed
 
-The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL
+The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL. Note that the content of 
+the downloaded file is never send to Virus Total. Checking only the URL has a privacy and response time advantage. 
 
 <img width="835" height="829" alt="image" src="https://github.com/user-attachments/assets/023cbb02-e1f8-47ec-9912-a24a87c3c20f" />
 
@@ -40,8 +41,12 @@ It does not monitor nor save or transmit any of the URL's your are visiting.
 
 _________________________ Further development
 
-I will check issues posted https://github.com/Kees1958/DownloadSentinel/issues and add a second (more permissive) risk scoring mechanism.
-I am not planning to add multi language or firefox support.
+First the extension has to be accepted by Google (first time always takes a bit longer). 
+Next version will have a second (more permissive) risk scoring mechanism and a send to Virus Total option. 
+I am not planning to add multi language or firefox support. 
+
+_________________________ Issues or suggestions
+Please post issues or suggestions on https://github.com/Kees1958/DownloadSentinel/issues.
 
 
 
