@@ -11,7 +11,7 @@ the downloaded file is never send to Virus Total. Checking only the URL has a pr
 
 When the download is unknown to Virus Total it does some secondary checks to determine the host reputation score.
 1. Check whether the download domain of the download URL is on the Quad9 blackist
-2. Check the domain age of the  domain of the download URL ar RDAP
+2. Check the domain age of the  domain of the download URL at RDAP.org
 3. Check whether the domain hosting the download is a often used to spread malware
 4. Check whether the Top Level Domain of the download URL is listed as a ¨much abused Top level Domain¨
 5. Check whether the download URL is sketchy (e.g. includes punycode, well knwon brands or used numbers for characters (e.g 1 for l and 0 for 0)
