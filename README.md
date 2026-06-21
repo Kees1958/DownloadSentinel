@@ -5,9 +5,14 @@ The user can decide to cancel & go back or ignore & proceed
 The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL. Note that the content of 
 the downloaded file is never send to Virus Total. Checking only the URL has a privacy and response time advantage. 
 
-<img width="835" height="829" alt="image" src="https://github.com/user-attachments/assets/023cbb02-e1f8-47ec-9912-a24a87c3c20f" />
+<img width="832" height="815" alt="image" src="https://github.com/user-attachments/assets/63f11d7a-cdfb-48cf-bdb4-ecd9bcae73d1" />
 
-
+When the download is unknown to Virus Total it does some secondary checks to determine the host reputation score.
+1. Check whether the download domain of the download URL is on the Quad9 blackist
+2. Check the domain age of the  domain of the download URL ar RDAP
+3. Check whether the domain hosting the download is a often used to spread malware
+4. Check whether the Top Level Domain of the download URL is listed as a ¨much abused Top level Domain¨
+5. Check whether the download URL is sketchy (e.g. includes punycode, well knwon brands or used numbers for characters (e.g 1 for l and 0 for 0)
 
 _________________________ What you need to set in the OPTIONS 
 
@@ -31,7 +36,10 @@ _________________________  PERMISSIONS
 1. Download - because it has to intercept downloads
 2. Options UI for pages/options/OptionsPage.html - because the extension has an options page 
 3. Storage  - because it saves your Virus Total API key and domain whitelist you enter on the options page
-4. Host permission for wwww.virustotal.com - because it checks the reputation of the download URL at VT
+4. Host permission for 
+a) wwww.virustotal.com - because it checks the reputation of the download URL at VTHost permission 
+b) wwww.quad9.com      - because it checks whether the domain of the download URL is on Quad9 blacklist
+c) www.rdap.org        - because it check for the domain age (less 30 days is suspicious) 
 
 _________________________  PRIVACY
 
@@ -41,8 +49,6 @@ Privacy policy: https://github.com/Kees1958/DownloadSentinel/blob/main/privacy.m
 
 _________________________ Further development
 
-First the extension has to be accepted by Google (first time always takes a bit longer). 
-Next version will have a second (more permissive) risk scoring mechanism and a send to Virus Total option. 
 I am not planning to add multi language or firefox support. 
 
 _________________________ Issues or suggestions
