@@ -7,6 +7,8 @@ the downloaded file is never send to Virus Total. Checking only the URL has a pr
 
 <img width="832" height="815" alt="image" src="https://github.com/user-attachments/assets/63f11d7a-cdfb-48cf-bdb4-ecd9bcae73d1" />
 
+.
+
 When the download is unknown to Virus Total it does some secondary checks to determine the host reputation score.
 1. Check whether the download domain of the download URL is on the Quad9 blackist
 2. Check the domain age of the  domain of the download URL ar RDAP
