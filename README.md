@@ -39,9 +39,9 @@ _________________________  PERMISSIONS
 2. Options UI for pages/options/OptionsPage.html - because the extension has an options page 
 3. Storage  - because it saves your Virus Total API key and domain whitelist you enter on the options page
 4. Host permission for   
-- a. www.virustotal.com - because it checks the reputation of the download URL at VTHost permission 
-- b. www.quad9.com      - because it checks whether the domain of the download URL is on Quad9 blacklist
-- c. www.rdap.org        - because it check for the domain age (less 30 days is suspicious) 
+- www.virustotal.com - because it checks the reputation of the download URL at VTHost permission 
+- www.quad9.com      - because it checks whether the domain of the download URL is on Quad9 blacklist
+- www.rdap.org        - because it check for the domain age (less 30 days is suspicious) 
 
 _________________________  PRIVACY
 
