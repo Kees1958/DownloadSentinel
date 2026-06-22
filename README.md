@@ -1,6 +1,8 @@
-When an executable or compressed file is downloaded which does not come from a (user determined) whitelist or the build-in whitelist,
-It shows a warning page and checks the download URL reputation on Virus Total and updates the warning page with the results found for the download URL.
-The user can decide to cancel & go back or ignore & proceed
+This extension warns for potential harmfull downloads (archive file format or executable mime or file format) and check the reputation of the download URL at Virus Total when the user has entered his/her FREE Virus Total API key. The extensions shows a risk assessments and the user can either choose to cancel & go back or ignore & proceed option. When the download is unknown at VT, it offers an option to submit the download URL (not the download).
+
+When download URL is unknown at Virus Total, it checks whether the download domain is blacklisted at Quad9 and determines the age at RDAP. It also checks (using an internal list) whether the domain is a free hosting or code sharing domain often used to spread malware and checks whether the Top Level Domain is on much abused TLD list. 
+
+It also checks whether the download-URL is sketchy (e.g. includes punycode, mentions well known brands or uses numbers for characters e.g 1 for l and 0 for 0) uses a different mime type than file format and exceeds VirusTotal size maximum (many Antivirus don´t check files which are to large). 
 
 The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL. Note that the content of 
 the downloaded file is never send to Virus Total. Checking only the URL has a privacy and response time advantage. 
@@ -8,13 +10,6 @@ the downloaded file is never send to Virus Total. Checking only the URL has a pr
 <img width="832" height="815" alt="image" src="https://github.com/user-attachments/assets/63f11d7a-cdfb-48cf-bdb4-ecd9bcae73d1" />
 
 .
-
-When the download is unknown to Virus Total it does some secondary checks to determine the host reputation score.
-1. Check whether the download domain of the download URL is on the Quad9 blackist
-2. Check the domain age of the  domain of the download URL at RDAP.org
-3. Check whether the domain hosting the download is often used to spread malware
-4. Check whether the Top Level Domain of the download URL is listed as a ¨much abused Top level Domain¨
-5. Check whether the download URL is sketchy (e.g. includes punycode, well knwon brands or used numbers for characters (e.g 1 for l and 0 for 0)
 
 _________________________ What you need to set in the OPTIONS 
 
