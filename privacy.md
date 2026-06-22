@@ -24,11 +24,11 @@ The extension monitors download events for executable and archive file types in 
 
 When a download is initiated, Download Sentinel checks whether the download's domain is included on a predefined whitelist.
 
-If the domain is **not** on the whitelist, Download Sentinel sends the **download URL only** to VirusTotal for reputation analysis.
+When is **not** on the whiteliste, it checks whether the (sanitized) domain is resolved by Quad9 (not blacklsited) and determines its age at RDAP.
+
+When the user has entered his personal free VT API key. Download Sentinel sends the **download URL only** to VirusTotal for reputation analysis. 
 
 ### Important Notice
-
-**Only the download URL is transmitted to VirusTotal.**
 
 Download Sentinel **does not** upload, transmit, or share:
 
@@ -40,9 +40,11 @@ Download Sentinel **does not** upload, transmit, or share:
 
 ## Third-Party Services
 
-Download Sentinel uses VirusTotal to assess the reputation of download URLs.
-
-When a download URL is submitted for analysis, the processing of that URL is subject to VirusTotal's own privacy practices and terms of service.
+- Download Sentinal checks whether Quad9 resolves the domain in download-URL, when it does it also checks the domain age at RDAP
+- When an VT API key is entered, the download URL is submitted for analysis to Virus Toal
+- The processing of the API call is subject to those third-party own privacy practices and terms of service.
+- Quad9 is known for its robust privacy policy, RDAP also has a solid privacy policy (aggregates user agents, domains checked and IPv4 or IPv6 without storing your public IP)
+- Virus Total purpose is to share malware signals, this is the reason why only the download-URL reputation is checked (and not the download itself)!
 
 ## Data Storage
 
