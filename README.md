@@ -1,11 +1,14 @@
-As of version 1.2 this extension warns for potential harmful downloads (archive file format or executable mime type or file format) and check the reputation of the download URL at Virus Total when the user has entered his/her FREE Virus Total API key. The extensions shows a risk assessments and the user can either choose to cancel & go back or ignore & proceed option. When the download is unknown at VT, it offers an link to Virus Total to manually check the download.
+This extension warns for potential harmful downloads (archive file format or executable mime type or file format) and check the reputation of the download URL at Virus Total when the user has entered his/her FREE Virus Total API key in the options page. 
+
+In the options a false positive reduction level can be chosen, a different waring page background and up to 12 whitelisted domains which are not check when something is downloaded.
+
+The extensions shows a risk assessments and the user can either choose to cancel & go back or ignore & proceed option. When the download is unknown at VT, it offers an link to Virus Total to manually check the download.
 
 When download URL is unknown at Virus Total, it checks whether the download domain is blacklisted at Quad9 and determines the age at RDAP. It also checks (using an internal list) whether the domain is a free hosting or code sharing domain often used to spread malware and checks whether the Top Level Domain is on much abused TLD list. When it is a HTTP website or a IP adress only it also uses this as negative signals. 
 
 It also checks whether the download-URL is sketchy (e.g. includes punycode, mentions well known brands or uses numbers for characters e.g 1 for l and 0 for 0) uses a different mime type than file format and exceeds VirusTotal size maximum (many Antivirus don´t check files which are to large). 
 
-The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL. Note that the content of 
-the downloaded file is never send to Virus Total. Checking only the URL has a privacy and response time advantage. 
+The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL. Note that the content of the downloaded file is never send to Virus Total. Checking only the URL has a privacy and response time advantage
 
 <img width="832" height="815" alt="image" src="https://github.com/user-attachments/assets/63f11d7a-cdfb-48cf-bdb4-ecd9bcae73d1" />
 
