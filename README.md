@@ -2,7 +2,7 @@ This extension warns for potential harmful downloads (archive file format or exe
 
 In the options a false positive reduction level can be chosen, a different waring page background and up to 12 whitelisted domains which are not check when something is downloaded.
 
-The extensions shows a risk assessments and the user can either choose to cancel & go back or ignore & proceed option. When the download is unknown at VT, it offers an link to Virus Total to manually check the download.
+The extensions shows a risk assessments and the user can either choose to go back or proceed option. It offers a link to Virus Total in the disclaimer to manually check the download.
 
 When download URL is unknown at Virus Total, it checks whether the download domain is blacklisted at Quad9 and determines the age at RDAP. It also checks (using an internal list) whether the domain is a free hosting or code sharing domain often used to spread malware and checks whether the Top Level Domain is on much abused TLD list. When it is a HTTP website or a IP adress only it also uses this as negative signals. 
 
