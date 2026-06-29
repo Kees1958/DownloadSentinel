@@ -10,17 +10,20 @@ It also checks whether the download-URL is sketchy (e.g. includes punycode, ment
 
 The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL. Note that the content of the downloaded file is never send to Virus Total. Checking only the URL has a privacy and response time advantage
 
-<img width="832" height="815" alt="image" src="https://github.com/user-attachments/assets/63f11d7a-cdfb-48cf-bdb4-ecd9bcae73d1" />
+<img width="1639" height="891" alt="image" src="https://github.com/user-attachments/assets/a9fbac1c-1284-4f28-a301-bc60cefe90c7" />
+
 
 .
 
 _________________________ What you need to set in the OPTIONS 
 
 1. Signup to Virus Total to get a free API key and enter the key (required)
+2. Change the False Positive default setting (standard at medium, change is optional)
 2. Change the background color of the warning screen, which defaults to Google Safe Browsing (optional)
 3. Enter up to 12 domains which are white listed to skip the download check of executables and archives for these websites (optional)
 
-<img width="704" height="738" alt="image" src="https://github.com/user-attachments/assets/ddf86e2d-d5d7-4141-833b-efc7f4a9f441" />
+<img width="708" height="967" alt="image" src="https://github.com/user-attachments/assets/ca3b7268-5fd7-426a-9e90-055fb43b8c6a" />
+
 
 _________________________ Using the extension
 
