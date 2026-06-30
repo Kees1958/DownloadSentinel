@@ -1,16 +1,17 @@
+Warns for potentially harmful downloads.
+
 This extension warns for potential harmful downloads (archive file format or executable mime type or file format) and check the reputation of the download URL at Virus Total when the user has entered his/her FREE Virus Total API key in the options page. 
 
 In the options a false positive reduction level can be chosen, a different waring page background and up to 12 whitelisted domains which are not check when something is downloaded.
-
-The extensions shows a risk assessments and the user can either choose to go back or proceed option. It offers a link to Virus Total in the disclaimer to manually check the download.
 
 When download URL is unknown at Virus Total, it checks whether the download domain is blacklisted at Quad9 and determines the age at RDAP. It also checks (using an internal list) whether the domain is a free hosting or code sharing domain often used to spread malware and checks whether the Top Level Domain is on much abused TLD list. When it is a HTTP website or a IP adress only it also uses this as negative signals. 
 
 It also checks whether the download-URL is sketchy (e.g. includes punycode, mentions well known brands or uses numbers for characters e.g 1 for l and 0 for 0) uses a different mime type than file format and exceeds VirusTotal size maximum (many Antivirus don´t check files which are to large). 
 
-The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL. Note that the content of the downloaded file is never send to Virus Total. Checking only the URL has a privacy and response time advantage
+The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL. Note that the content of the downloaded file is never send to Virus Total. Checking only the URL has a privacy and response time advantage. 
 
-<img width="1639" height="891" alt="image" src="https://github.com/user-attachments/assets/a9fbac1c-1284-4f28-a301-bc60cefe90c7" />
+
+<img width="2498" height="880" alt="image" src="https://github.com/user-attachments/assets/f5343e20-90eb-41fe-92ff-a7fee5eb9269" />
 
 
 .
@@ -39,7 +40,8 @@ _________________________  PERMISSIONS
 1. Download - because it has to intercept downloads
 2. Options UI for pages/options/OptionsPage.html - because the extension has an options page 
 3. Storage  - because it saves your Virus Total API key and domain whitelist you enter on the options page
-4. Host permission for   
+4. Alarms - because it needs to know whether a (small) file downloaded before Virus Total returns results
+5. Host permission for   
 - www.virustotal.com - because it checks the reputation of the download URL at VTHost permission 
 - www.quad9.com      - because it checks whether the domain of the download URL is on Quad9 blacklist
 - www.rdap.org        - because it check for the domain age (less 30 days is suspicious) 
@@ -50,9 +52,6 @@ It does not monitor nor save or transmit any of the URL's your are visiting. Onl
 
 Privacy policy: https://github.com/Kees1958/DownloadSentinel/blob/main/privacy.md)
 
-_________________________ Further development
-
-I am not planning to add multi language or firefox support. 
 
 _________________________ Issues or suggestions
 
