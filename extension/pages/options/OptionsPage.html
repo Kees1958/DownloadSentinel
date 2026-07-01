@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Download Sentinel — Options</title>
+    <link rel="stylesheet" href="OptionsPage.css">
+    <script src="../../util/Storage.js" type="text/javascript"></script>
+    <script src="../../util/Settings.js" type="text/javascript"></script>
+    <script src="OptionsPage.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<!-- Banner -->
+<div id="banner" class="banner">
+    <img id="logo" class="logo" src="../../assets/icons/icon128.png" alt="Sentinel Logo">
+    <span class="banner-text">Download Sentinel — Options</span>
+</div>
+
+<div class="page-wrapper">
+<div class="options-card">
+
+    <!-- ── VT API Key section ── -->
+    <div class="section-header">
+        <h2>VirusTotal API Key</h2>
+    </div>
+
+    <p class="unlock-text">
+        Unlock the options by entering a Virus Total API key &nbsp;
+        <a href="https://www.virustotal.com/gui/join-us" target="_blank" class="link-yellow">Get a free API key</a>
+    </p>
+
+    <div class="api-key-block">
+        <div class="api-row">
+            <input type="password" id="vtApiKeyInput" class="api-input"
+                   placeholder="Paste your VT API key (64 hex characters)…"
+                   autocomplete="off" spellcheck="false">
+            <button id="saveKeyBtn" class="btn btn-save">Save</button>
+            <button id="clearKeyBtn" class="btn btn-clear">Clear</button>
+        </div>
+        <div id="apiKeyMsg" class="api-msg"></div>
+
+      </div>
+
+    <hr class="divider">
+
+    <!-- ── False positive reduction ── -->
+    <div id="fpSection" class="section locked">
+        <div class="section-header">
+            <h2>False Positive Reduction</h2>
+        </div>
+        <p class="opt-hint">Filter VirusTotal results to reduce false positives.</p>
+        <p class="fp-mode-hint" id="fpModeHint"></p>
+        <div class="fp-row">
+            <input type="range" id="fpSlider" class="fp-slider" min="0" max="3" step="1" value="1">
+        </div>
+        <div class="fp-grid-labels" id="fpGridLabels">
+            <span data-index="0">HIGH</span>
+            <span data-index="1">MEDIUM</span>
+            <span data-index="2">LOW</span>
+            <span data-index="3">NONE</span>
+        </div>
+        <button id="saveFpBtn" class="btn btn-save-opt">Save</button>
+        <div id="fpMsg" class="api-msg"></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── Warning background color ── -->
+    <div id="colorSection" class="section locked">
+        <div class="section-header">
+            <h2>Warning Page Background Color</h2>
+        </div>
+        <p class="opt-hint">Default is Google Red (179, 38, 30). Enter custom RGB values:</p>
+
+        <div class="color-row">
+            <label class="color-label">Red:
+                <input type="number" id="colorR" class="color-input" min="0" max="255" placeholder="179">
+            </label>
+            <label class="color-label">Green:
+                <input type="number" id="colorG" class="color-input" min="0" max="255" placeholder="38">
+            </label>
+            <label class="color-label">Blue:
+                <input type="number" id="colorB" class="color-input" min="0" max="255" placeholder="30">
+            </label>
+            <div id="colorPreview" class="color-preview" title="Preview"></div>
+        </div>
+        <button id="saveColorBtn" class="btn btn-save-opt">Save Color</button>
+        <div id="colorMsg" class="api-msg"></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── Domain whitelist ── -->
+    <div id="domainSection" class="section locked">
+        <div class="section-header">
+            <h2>Trusted Domains (Do Not Check)</h2>
+        </div>
+        <p class="opt-hint">
+            Built-in defaults: <span class="mono">chromewebstore.google.com</span>,
+            <span class="mono">drive.google.com</span>,
+            <span class="mono">apps.microsoft.com</span>,
+            <span class="mono">onedrive.live.com</span>,
+            <span class="mono">sharepoint.com</span>,
+            <span class="mono">apps.apple.com</span>,
+            <span class="mono">icloud.com</span>.<br>
+            Add up to 12 extra domains (format: <span class="mono">domain.tld</span>):
+        </p>
+
+        <div id="domainInputs" class="domain-grid">
+            <!-- 10 inputs rendered by JS -->
+        </div>
+
+        <button id="saveDomainsBtn" class="btn btn-save-opt">Save Domains</button>
+        <div id="domainMsg" class="api-msg"></div>
+    </div>
+
+</div><!-- .options-card -->
+</div><!-- .page-wrapper -->
+
+</body>
+</html>
