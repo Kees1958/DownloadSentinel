@@ -65,5 +65,6 @@ For people only using the default Safe Browsing protection in Chromium based bro
 
 <img width="1092" height="485" alt="image" src="https://github.com/user-attachments/assets/11e48f6d-3a34-42a7-b84b-efd1804bd8c0" />
 
+_________________________ License
 
-
+This project is licensed under the GNU GPL v3.0 - see LICENSE file for details.
