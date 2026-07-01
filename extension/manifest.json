@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Download Sentinel",
+  "description": "Warns for potentially harmful downloads.",
+  "version": "1.4.2",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "pages/popup/PopupPage.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "24": "assets/icons/icon24.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    },
+    "default_title": "Download Sentinel"
+  },
+  "options_ui": {
+    "page": "pages/options/OptionsPage.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "downloads",
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://www.virustotal.com/*",
+    "https://dns.quad9.net/*",
+    "https://rdap.org/*"
+  ],
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "pages/warning/WarningPage.html",
+        "pages/warning/WarningPage.css",
+        "pages/warning/WarningPage.js",
+        "assets/icons/icon128.png"
+      ],
+      "matches": [
+        "chrome-extension://*/*"
+      ]
+    }
+  ]
+}
