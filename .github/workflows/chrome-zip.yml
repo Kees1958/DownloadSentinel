@@ -1,0 +1,35 @@
+name: Build Chrome Extension ZIP
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create clean Chrome ZIP
+        run: |
+          mkdir build
+          
+          # Kopieer alleen extension bestanden (root clean maken)
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='*.md' \
+            --exclude='LICENSE' \
+            . build/
+
+          cd build
+          zip -r ../DownloadSentinel-${GITHUB_REF_NAME}.zip .
+
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chrome-extension-zip
+          path: DownloadSentinel-*.zip
