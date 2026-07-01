@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Download Sentinel",
   "description": "Warns for potentially harmful downloads.",
-  "version": "1.5.5",
+  "version": "1.6",
   "background": {
     "service_worker": "background.js"
   },
