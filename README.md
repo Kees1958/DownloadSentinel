@@ -1,5 +1,7 @@
 Warns for potentially harmful downloads.
 
+Chrome webstore: https://chromewebstore.google.com/detail/download-sentinel/ofjlbohlnaihneapmmnhkbllbekdofce
+
 This extension warns for potential harmful downloads (archive file format or executable mime type or file format) and check the reputation of the download URL at Virus Total when the user has entered his/her FREE Virus Total API key in the options page. 
 
 In the options a false positive reduction level can be chosen, a different waring page background and up to 12 whitelisted domains which are not check when something is downloaded.
