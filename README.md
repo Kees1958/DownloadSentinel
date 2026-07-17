@@ -6,9 +6,7 @@ This extension warns for potential harmful downloads (archive file format or exe
 
 In the options a false positive reduction level can be chosen, a different waring page background and up to 12 whitelisted domains which are not check when something is downloaded.
 
-When download URL is unknown at Virus Total, it checks whether the download domain is blacklisted at Quad9 and determines the age at RDAP. It also checks (using an internal list) whether the domain is a free hosting or code sharing domain often used to spread malware and checks whether the Top Level Domain is on much abused TLD list. When it is a HTTP website or a IP adress only it also uses this as negative signals. 
-
-It also checks whether the download-URL is sketchy (e.g. includes punycode, mentions well known brands or uses numbers for characters e.g 1 for l and 0 for 0) uses a different mime type than file format and exceeds VirusTotal size maximum (many Antivirus don´t check files which are to large). 
+When download URL is unknown at Virus Total, it does a lot of heuristics check, for instance: check whether the download domain is blacklisted at Quad9 and determines the age at RDAP. It also checks (using an internal list) whether the domain is a free hosting or code sharing domain often used to spread malware and checks whether the Top Level Domain is on much abused TLD list. When it is a HTTP website or a IP adress only it also uses this as negative signals. It also checks whether the download-URL is sketchy (e.g. includes punycode, mentions well known brands or uses numbers for characters e.g 1 for l and 0 for 0) uses a different mime type than file format and exceeds VirusTotal size maximum (many Antivirus don´t check files which are to large) and many more.
 
 The warning page shows a risk score which is determined based on the information available on Virus Total of the download URL. Note that the content of the downloaded file is never send to Virus Total. Checking only the URL has a privacy and response time advantage. 
 
