@@ -31,20 +31,16 @@ HOW DOES THE WARNING PAGE WORK?
 The warning page shows a risk score based on what VirusTotal knows about the download address. The file itself is never sent to VirusTotal, which is better for your privacy and gives a faster result. After checking the results, you can choose to proceed, or to look up the download at VirusTotal (when it is known there), or at Hybrid Analysis for a free scan with Metadefender and Crowdstrike (when it is not known at VirusTotal yet).
 
 
-OPTIONS PANEL
-A false positive reduction level can be set to reduce unnecessary warnings for well-known safe software. Up to 12 trusted websites can be whitelisted so downloads from those sites are never checked. You can also set a minimum confidence level to skip the warning automatically when a download is probably safe (default is +80%). The background color and the title of the warning page can be changed to your personal preference.
-
 <img width="2498" height="880" alt="image" src="https://github.com/user-attachments/assets/f5343e20-90eb-41fe-92ff-a7fee5eb9269" />
 
 
-.
 
 _________________________ What you need to set in the OPTIONS 
 
 1. Signup to Virus Total to get a free API key and enter the key (required)
-2. Change the False Positive default setting (standard at medium, change is optional)
-2. Change the background color of the warning screen, which defaults to Google Safe Browsing (optional)
-3. Enter up to 12 domains which are white listed to skip the download check of executables and archives for these websites (optional)
+2. Change the False Positive default setting (standard at medium, change is optional) and suppress probably safe downlads 
+3. Change the background color of the warning screen, which defaults to Google Safe Browsing (optional)
+4. Enter up to 12 domains which are white listed to skip the download check of executables and archives for these websites (optional)
 
 <img width="708" height="967" alt="image" src="https://github.com/user-attachments/assets/ca3b7268-5fd7-426a-9e90-055fb43b8c6a" />
 
