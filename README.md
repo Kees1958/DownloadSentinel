@@ -6,6 +6,11 @@ DOWNLOAD SENTINEL
 
 IMPORTANT NOTICE: DOWNLOAD SENTINEL DOES NOT BLOCK THE DOWNLOAD, IN STEAD IT PERFORMS ON-DOWNLOAD AND ON-FILE WRITE CHECKS TO WARN YOU FOR SNEAKY TACTICS WHICH WOULD NOT BE SIGNALED WHEN THE INITIAL DOWNLOAD WAS BLOCKED. AFTER THE DOWNLOAD FINISHES THE RESULTS ARE PRESENTED IN A WARNING POPUP. YOU CAN SUPPRESS THIS WARNING FOR ¨PROBABLY SAFE DOWNLOAD¨ IN THE OPTIONS.
 
+_________________________ Why use it?
+1. Checks download URL (see explanation below) provides you a risk score of the download
+2. Does not use any CPU cycles because it is inactive until something is downloaded (press Shift+Esc and you will see active tabs and service workers, but you won´t see Download Sentinel because it is inactive until something is downloaded).
+3. Designed for privacy (click on the browser extensions jigsaw icon and you will see Download Sentinel does not need access at all). 
+
 _________________________ Using the extension
 
 1. Click on the Download Sentinal icon and the banner shows the current status of the extension.
