@@ -6,6 +6,14 @@ DOWNLOAD SENTINEL
 
 IMPORTANT NOTICE: DOWNLOAD SENTINEL DOES NOT BLOCK THE DOWNLOAD, IN STEAD IT PERFORMS ON-DOWNLOAD AND ON-FILE WRITE CHECKS TO WARN YOU FOR SNEAKY TACTICS WHICH WOULD NOT BE SIGNALED WHEN THE INITIAL DOWNLOAD WAS BLOCKED. AFTER THE DOWNLOAD FINISHES THE RESULTS ARE PRESENTED IN A WARNING POPUP. YOU CAN SUPPRESS THIS WARNING FOR ¨PROBABLY SAFE DOWNLOAD¨ IN THE OPTIONS.
 
+_________________________ Using the extension
+
+1. Click on the Download Sentinal icon and the banner shows the current status of the extension.
+<img width="838" height="275" alt="image" src="https://github.com/user-attachments/assets/799ce443-99f7-4c92-88d4-9b4bbcd12c17" />
+
+
+_________________________ What Download Sentinal does to protect you
+
 Every time you download a file, Download Sentinel quietly runs a set of quick checks. No single check is proof of danger on its own; instead, each one adds or removes a few "trust points," and the final total decides whether the file looks Safe, Questionable, Suspicious, or Malicious.
 
 1. Does anyone else already know this file/site is bad or safe?
@@ -20,11 +28,6 @@ File type vs. label mismatch: If a site claims to be sending a photo but is actu
 4. Is the connection itself risky?
 Unencrypted connections: Downloads sent without the padlock (HTTPS) can be tampered with in transit — including a link that starts secure but drops the padlock partway through. Raw numeric addresses: Legitimate services almost always use a proper website name, not a bare set of numbers as the address. Hidden destination in the link: Some links show a trustworthy-looking name but secretly point somewhere else right after it — this trick is now caught too. Risky hosting: Some free/throwaway hosting platforms are disproportionately used to distribute malware, so files served from them are treated with extra caution.
 
-
-WHY ONLY SHOW A WARNING
-
-There are three reasons. First not blocking but showing a post download warning (which can be surpressed when it is probabaly safe in the options panel) also provides a 100% guarantee that it will never block a download you really need (e.g. a ticket for a concert in password protected zip-file). Secondly for the Virus Total results Download Sentinel waits maximum of 2 seconds to get the VT-rating. Small executables and scripts will be downloaded in these 2 seconds already. Third reason there are some tricks to start a download as pdf or zip and rename it when download completed as script or executable. Using the post download warning makes this extra heuristics check possible.
-
 Open Source: https://github.com/Kees1958/DownloadSentinel
 
 HOW DOES THE WARNING PAGE WORK?
@@ -38,20 +41,12 @@ The warning page shows a risk score based on what VirusTotal knows about the dow
 _________________________ What you need to set in the OPTIONS 
 
 1. Signup to Virus Total to get a free API key and enter the key (required)
-3. Click on the options button to enter your free Virus Total API key (https://www.virustotal.com/gui/join-us)
-<img width="838" height="275" alt="image" src="https://github.com/user-attachments/assets/799ce443-99f7-4c92-88d4-9b4bbcd12c17" />
-2. Change the False Positive default setting (standard at medium, change is optional) and suppress probably safe downlads 
-3. Change the background color of the warning screen, which defaults to Google Safe Browsing (optional)
-4. Enter up to 12 domains which are white listed to skip the download check of executables and archives for these websites (optional)
-
-
+2. Click on the options button to enter your free Virus Total API key (https://www.virustotal.com/gui/join-us)
+3. Optionally
+a) Change the False Positive default setting (standard at medium, change is optional) and suppress probably safe downloads 
+b) Change the background color of the warning screen, which defaults to Google Safe Browsing (optional)
+c) Enter up to 12 domains which are white listed to skip the download check of executables and archives for these websites (optional)
 <img width="708" height="967" alt="image" src="https://github.com/user-attachments/assets/ca3b7268-5fd7-426a-9e90-055fb43b8c6a" />
-
-
-_________________________ Using the extension
-
-1. Click on the Download Sentinal icon and the banner shows the current status of the extension.
-
 
 
 
