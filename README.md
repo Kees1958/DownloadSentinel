@@ -31,6 +31,7 @@ Unencrypted connections: Downloads sent without the padlock (HTTPS) can be tampe
 Open Source: https://github.com/Kees1958/DownloadSentinel
 
 HOW DOES THE WARNING PAGE WORK?
+
 The warning page shows a risk score based on what VirusTotal knows about the download address. The file itself is never sent to VirusTotal, which is better for your privacy and gives a faster result. After checking the results, you can choose to proceed, or to look up the download at VirusTotal (when it is known there), or at Hybrid Analysis for a free scan with Metadefender and Crowdstrike (when it is not known at VirusTotal yet).
 
 
