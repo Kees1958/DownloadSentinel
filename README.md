@@ -38,19 +38,20 @@ The warning page shows a risk score based on what VirusTotal knows about the dow
 _________________________ What you need to set in the OPTIONS 
 
 1. Signup to Virus Total to get a free API key and enter the key (required)
+3. Click on the options button to enter your free Virus Total API key (https://www.virustotal.com/gui/join-us)
+<img width="838" height="275" alt="image" src="https://github.com/user-attachments/assets/799ce443-99f7-4c92-88d4-9b4bbcd12c17" />
 2. Change the False Positive default setting (standard at medium, change is optional) and suppress probably safe downlads 
 3. Change the background color of the warning screen, which defaults to Google Safe Browsing (optional)
 4. Enter up to 12 domains which are white listed to skip the download check of executables and archives for these websites (optional)
+
 
 <img width="708" height="967" alt="image" src="https://github.com/user-attachments/assets/ca3b7268-5fd7-426a-9e90-055fb43b8c6a" />
 
 
 _________________________ Using the extension
 
-1. It runs in the background doing warning you for potentially harmful downloads.
-2. Click on the Download Sentinal icon and the banner shows the current status of the extension.
-3. Click on the options button to enter your free Virus Total API key (https://www.virustotal.com/gui/join-us)
-<img width="838" height="275" alt="image" src="https://github.com/user-attachments/assets/799ce443-99f7-4c92-88d4-9b4bbcd12c17" />
+1. Click on the Download Sentinal icon and the banner shows the current status of the extension.
+
 
 
 
@@ -77,12 +78,6 @@ _________________________ Issues or suggestions
 Please post issues or suggestions on https://github.com/Kees1958/DownloadSentinel/issues.
 
 
-
-_________________________ Why use it?
-
-For people only using the default Safe Browsing protection in Chromium based browsers for privacy reasons, this extension fills in some gaps: go to https://testsafebrowsing.appspot.com/ Other possible use cases are people who use a browser which does not has Google Safe Browsing advanced mode for privacy reasons (e.g. Brave) or does not has any Google services (e.g. Ungoogled Chromium).
-
-<img width="1092" height="485" alt="image" src="https://github.com/user-attachments/assets/11e48f6d-3a34-42a7-b84b-efd1804bd8c0" />
 
 _________________________ License
 
