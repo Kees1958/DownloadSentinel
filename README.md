@@ -45,7 +45,7 @@ _________________________ What you need to set in the OPTIONS
 1. Signup to Virus Total to get a free API key and enter the key (required)
 2. Click on the options button to enter your free Virus Total API key (https://www.virustotal.com/gui/join-us)
 3. Optionally
-4. 
+   
 a) Change the False Positive default setting (standard at medium, change is optional) and suppress probably safe downloads
 
 b) Change the background color of the warning screen, which defaults to Google Safe Browsing (optional)
