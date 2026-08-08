@@ -62,7 +62,7 @@ _________________________  PERMISSIONS
 5. Host permission for   
 - www.virustotal.com - because it checks the reputation of the download URL at VTHost permission 
 - www.quad9.com      - because it checks whether the domain of the download URL is on Quad9 blacklist
-- www.rdap.org        - because it check for the domain age (less 30 days is suspicious) 
+- www.rdap.org        - because it check for the domain age (less than 30 days old is suspicious) 
 
 _________________________  PRIVACY
 
