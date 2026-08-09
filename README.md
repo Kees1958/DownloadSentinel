@@ -39,8 +39,8 @@ HOW DOES THE WARNING PAGE WORK?
 
 The warning page shows a risk score based on what VirusTotal knows about the download address. The file itself is never sent to VirusTotal, which is better for your privacy and gives a faster result. After checking the results, you can choose to proceed, or to look up the download at VirusTotal (when it is known there), or at Hybrid Analysis for a free scan with Metadefender and Crowdstrike (when it is not known at VirusTotal yet).
 
+<img width="1845" height="668" alt="image" src="https://github.com/user-attachments/assets/8b346b95-c6c3-4436-bacc-c1403989132d" />
 
-<img width="2498" height="880" alt="image" src="https://github.com/user-attachments/assets/f5343e20-90eb-41fe-92ff-a7fee5eb9269" />
 
 
 
