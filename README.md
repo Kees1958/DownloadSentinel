@@ -45,7 +45,6 @@ The warning page shows a risk score based on what VirusTotal knows about the dow
 OPTIONS PANEL
 A false positive reduction level can be set to reduce unnecessary warnings for well-known safe software. Up to 12 trusted websites can be whitelisted so downloads from those sites are never checked. You can also set a minimum confidence level to skip the warning automatically when a download is probably safe (default is +80%). The background color and the title of the warning page can be changed to your personal preference.
 
-https://chromewebstore.google.com/detail/download-sentinel/ofjlbohlnaihneapmmnhkbllbekdofce?pli=1
 
 <img width="1845" height="668" alt="image" src="https://github.com/user-attachments/assets/8b346b95-c6c3-4436-bacc-c1403989132d" />
 
