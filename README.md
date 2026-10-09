@@ -19,25 +19,33 @@ _________________________ Using the extension
 
 _________________________ What Download Sentinal does to protect you
 
+DOWNLOAD SENTINEL
+
+IMPORTANT NOTICE: DOWNLOAD SENTINEL DOES NOT BLOCK THE DOWNLOAD, IN STEAD IT PERFORMS ON-DOWNLOAD AND ON-FILE WRITE CHECKS TO WARN YOU FOR SNEAKY TACTICS WHICH WOULD NOT BE SIGNALED WHEN THE INITIAL DOWNLOAD WAS BLOCKED. AFTER THE DOWNLOAD FINISHES THE RESULTS ARE PRESENTED IN A WARNING POPUP. YOU CAN SUPPRESS THIS WARNING FOR ¨PROBABLY SAFE DOWNLOAD¨ IN THE OPTIONS.
+
 Every time you download a file, Download Sentinel quietly runs a set of quick checks. No single check is proof of danger on its own; instead, each one adds or removes a few "trust points," and the final total decides whether the file looks Safe, Questionable, Suspicious, or Malicious.
 
-1. Does anyone else already know this file/site is bad or safe?
-Reputation scan (VirusTotal): Checks if security companies around the world have already flagged this exact download link as malicious, and how long it's been known about. A link seen and confirmed clean for weeks is trusted more than one that appeared an hour ago. DNS blocklist check (Quad9): Checks the website's address against known lists of malicious domains — similar to a phone number being flagged as a scam caller.
+1. HAS ANYONE ELSE ALREADY SPOTTED THIS FILE OR WEBSITE AS SUSPICIOUS?
+We check at Virus Total if security companies have already flagged this download as dangerous — and for how long it’s been known safe or unsafe. We also check it against lists of known scam websites, like a phone number flagged as a scam caller.
 
-2. Is the website itself trustworthy?
-Domain & website-ending checks: Some website names and endings (like certain unusual .xyz-style suffixes) are used far more often for scams than legitimate ones, so a match lowers trust. How new is the website?: Scam sites are often thrown together and abandoned quickly. A domain registered only days ago is treated with more suspicion than one that's existed for years. Look-alike names: Catches tricks like fake Microsoft/Apple/PayPal-style addresses, confusable letters (e.g. "m1crosoft"), or oddly long chains of sub-addresses designed to fool the eye.
+2. CAN YOU TRUST THE WEBSITE AND DOWNLOAD LINK?
+Some website endings (like odd “.xyz”-style ones) are used by scammers far more than real businesses. Brand-new websites are treated more cautiously than ones that have been around for years — scam sites often appear and vanish fast. We also catch fake lookalikes, like “m1crosoft” or “arnazon.com” instead of “amazon.com”.
 
-3. Is the file itself hiding something?
-File type vs. label mismatch: If a site claims to be sending a photo but is actually sending a program, that mismatch is a red flag. Disguised file endings: Catches tricks like "invoice.pdf.exe", even longer chains like "invoice.pdf.zip.exe" — a program pretending to be a harmless document by hiding its real ending. File swapped along the way: Warns when the file that actually arrives is riskier than what the download link first promised. Raw scripts: Bare scripts are a common way to sneak malicious commands past you. A home user has little to no reason to download scripts. Unusually large files: Very large files can't be fully scanned by reputation services, so they're flagged as "check this yourself before trusting it."
+3. IS THE (DOWNLOAD) FILE HIDING SOMETHING?
+If a site says it’s sending a photo but actually sends a program, that’s a red flag. We catch sneaky tricks like “invoice.pdf.exe” (a program disguised as a document), file names secretly reversed so “evil.exe” looks like “safe.jpg”, and extra padding used to hide a dangerous ending from view. We also flag it if the file that arrives is riskier than what was promised, if it’s a bare script (something a home user rarely needs), or if it’s unusually large (too big to be fully scanned).
 
-4. Is the connection itself risky?
-Unencrypted connections: Downloads sent without the padlock (HTTPS) can be tampered with in transit — including a link that starts secure but drops the padlock partway through. Raw numeric addresses: Legitimate services almost always use a proper website name, not a bare set of numbers as the address. Hidden destination in the link: Some links show a trustworthy-looking name but secretly point somewhere else right after it — this trick is now caught too. Risky hosting: Some free/throwaway hosting platforms are disproportionately used to distribute malware, so files served from them are treated with extra caution.
+4. IS THE DOWNLOAD CONNECTION ITSELF RISKY?
+We flag downloads sent without the padlock (HTTPS), links using a bare set of numbers instead of a real website name, links that quietly redirect somewhere else, and files served from free “throwaway” hosting often used to spread malware.
 
-Open Source: https://github.com/Kees1958/DownloadSentinel
 
-HOW DOES THE WARNING PAGE WORK?
-
+WHAT DOES THE WARNING PAGE SHOW?
 The warning page shows a risk score based on what VirusTotal knows about the download address. The file itself is never sent to VirusTotal, which is better for your privacy and gives a faster result. After checking the results, you can choose to proceed, or to look up the download at VirusTotal (when it is known there), or at Hybrid Analysis for a free scan with Metadefender and Crowdstrike (when it is not known at VirusTotal yet).
+
+
+OPTIONS PANEL
+A false positive reduction level can be set to reduce unnecessary warnings for well-known safe software. Up to 12 trusted websites can be whitelisted so downloads from those sites are never checked. You can also set a minimum confidence level to skip the warning automatically when a download is probably safe (default is +80%). The background color and the title of the warning page can be changed to your personal preference.
+
+https://chromewebstore.google.com/detail/download-sentinel/ofjlbohlnaihneapmmnhkbllbekdofce?pli=1
 
 <img width="1845" height="668" alt="image" src="https://github.com/user-attachments/assets/8b346b95-c6c3-4436-bacc-c1403989132d" />
 
