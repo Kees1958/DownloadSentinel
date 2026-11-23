@@ -54,7 +54,7 @@
 
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { repoPaths } from "./repoPaths.mjs";
 
 import { FilenameAnalysis } from "../util/FilenameAnalysis.js";
 import { UrlUtils } from "../util/UrlUtils.js";
@@ -68,7 +68,7 @@ import { ScoringEngineV2 } from "../protection/ScoringEngineV2.js";
 import { DownloadShape } from "../util/DownloadShape.js";
 import { WarnPolicy } from "../protection/WarnPolicy.js";   // v3.5.2 — window shown yes/no
 
-const ROOT         = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
+const { TOOLS_ROOT: ROOT } = repoPaths(import.meta.url);   // v3.6.0 layout: tools/ holds tests/fixtures/
 const CORPUS_FILE   = path.join(ROOT, "tests", "fixtures", "fp-corpus.json");
 const BASELINE_FILE = path.join(ROOT, "tests", "fixtures", "fp-baseline.json");
 

@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Download Sentinel",
   "description": "Warns for potentially harmful downloads.",
-  "version": "3.5.6",
+  "version": "3.6.0",
   "background": {
     "service_worker": "background.js",
     "type": "module"
@@ -17,6 +17,9 @@
       "128": "assets/icons/icon128.png"
     },
     "default_title": "Download Sentinel"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none';"
   },
   "options_ui": {
     "page": "pages/options/OptionsPage.html",

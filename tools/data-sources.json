@@ -12,7 +12,7 @@
         "data/HostList.json"
       ],
       "updateFrequencyNote": "HaGeZi publishes this list on an ongoing basis (hours-scale); this project re-fetches it per release, not continuously.",
-      "builtFromSnapshot": "sha256:b46176ca8479"
+      "builtFromSnapshot": "sha256:1a4d767dd372"
     },
     {
       "name": "HaGeZi Badware Hoster",
@@ -25,7 +25,7 @@
         "data/HostList.json"
       ],
       "updateFrequencyNote": "Same cadence as HaGeZi DynDNS above.",
-      "builtFromSnapshot": "sha256:d33034980811"
+      "builtFromSnapshot": "sha256:bd2d17d43bdd"
     },
     {
       "name": "Kees1958 Suspicious websites",
@@ -51,7 +51,7 @@
         "data/PublicSuffixList.json"
       ],
       "updateFrequencyNote": "Changes as TLDs/registries change — infrequent but ongoing; re-fetch per release.",
-      "builtFromSnapshot": "sha256:d3e6243b5169"
+      "builtFromSnapshot": "sha256:762b6cbdd2da"
     },
     {
       "name": "Chrome UX Report (CrUX) top sites",
@@ -91,7 +91,7 @@
       ],
       "updateOn": "minor",
       "updateFrequencyNote": "v3.3.0 (3P Matrix alignment item 1) — util/DomainAge.js's platform-subdomain skip list. Shares its raw cached file with the 'Public Suffix List' entry above (refreshed by tools/update-psl.mjs --fetch); this entry's own updateScript only re-extracts the PRIVATE DOMAINS section into its own JSON, it does not re-fetch. New hosting platforms are added to the PSL at most a few times a month — refreshing once per minor release is ample.",
-      "builtFromSnapshot": "sha256:d3e6243b5169"
+      "builtFromSnapshot": "sha256:762b6cbdd2da"
     },
     {
       "name": "IANA RDAP bootstrap registry (ccTLDs with RDAP service)",

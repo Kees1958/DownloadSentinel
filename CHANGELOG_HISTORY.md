@@ -5,6 +5,92 @@ The brief user-facing summary is CHANGELOG.md.
 
 ---
 
+## 3.6.0 — repository in the uBlock Dynamic / 3P Matrix layout; 3P Matrix 5.0.5–5.0.8 reviewed; lists refreshed; page CSP, message gate, log hygiene, release check (2026-11-23)
+
+Source worked from: DownloadSentinel 3.5.6 (DOCS/EXTENSION/TOOLS zips, identical to the ones in the GitHub repo)
+and 3P Matrix 5.0.8 (GitHub, Kees1958/3P-Matrix-lite, with 5.0.4 from its history as the baseline). User request:
+add DS to its GitHub repo like uBD and 3PM, and port every 3PM improvement made since DS's last update (3.5.6,
+2026-11-09 = 3PM 5.0.4) that is relevant to download protection and heuristics.
+
+**Gap review (3PM 5.0.4 → 5.0.8), file by file:**
+- `lib/downloadsentinel/` (the shared download library): no change at all. Its data payloads compared with DS
+  3.5.6: Brands, GovSuffixes, RdapCctlds, RiskyHostingSites, SuspiciousDomains, SuspiciousTlds, TopSitesFilter,
+  UrlShorteners identical; **HostList, PlatformSuffixes and PublicSuffixList newer in 3PM** (rebuilt for 3PM 5.0 on
+  2026-11-06 17:45 from newer raw snapshots; DS 3.5.5's were built that morning from older ones) → ported (below).
+- `core/download-guard.js`, `core/download-settings.js`, `core/site-scorer.js`, `ui/download-*`, `ui/vt-key-prompt.html`,
+  `data/suspicious-hosting.js`, `data/builtin-domains.js`, `data/settings-io.js`: comment-only changes (protection
+  numbers → protection keys). Nothing to port.
+- 5.0.6 security hardening — relevant, ported: extension-page CSP; messages per sender kind (C46).
+  Not relevant: the in-page warning changes, fake-window and password-form checks (DS has no content scripts).
+- 5.0.7 — relevant, ported: no full addresses in logs (C52); seeded fuzz tests of untrusted input (C51); the
+  release-contents declaration and least-privilege permission check. Not relevant: the "Failed to fetch" error
+  attribution (DNR), the ClickFix/skimmer warning fix, the 8 MB import limit (DS has no settings import).
+- 5.0.5 (worker blocks, WebAssembly), 5.0.8 (fullscreen) — page protections, not in DS.
+- Re-checked and still deliberately different: 3PM's DNS defaults (Control D + DNS4EU, 4.5.8) — DS keeps Quad9 +
+  Control D (DNS4EU is an optional permission in DS; a default must never trigger a permission prompt, see 3.5.5).
+
+### Repository layout
+- Root = the unpacked extension; `tools/` = the TOOLS package, flattened (scripts in `tools/`, `tools/tests/`,
+  `tools/lists-raw/`), as in Kees1958/uBlock-Dynamic and Kees1958/3P-Matrix-lite; changelogs, README, privacy.md
+  and LICENSE in the root; the release zips removed from the repo.
+- `tools/repoPaths.mjs` is now THE layout declaration: roots (found by walking up to `tools/package.json`, so it
+  works from `tools/` and `tools/tests/`), `NON_EXTENSION_DIR_NAMES`, `DOC_FILES`, `REPO_ONLY_FILES`. Every walker
+  uses it: complete-check (syntax/all files vs. extension-only walk; the file cross-reference now also fails a path
+  that resolves into `tools/`, since existence no longer proves "shipped"), check-compat-remove (one walk over the
+  repo), madge/jscpd (repo root as cwd), knip (entry/project globs rewritten, symlinks into `tools/`).
+- `check-mv3.mjs` (shared with 3PM): default extension root = the repo root, `tools` added to the never-scanned
+  folders. **3PM's copy still defaults to the old `../../EXTENSION` and does not skip `tools/`** — to sweep there.
+- The extension's ESLint config moved out of the shipped tree (`.eslintrc.json` → `tools/eslint-extension.json`,
+  used with `--no-eslintrc -c`); package.json scripts follow the layout.
+- Paths in the list register (`feeds`, `updateScript`), recordBuiltFrom() calls, test imports and comments:
+  `EXTENSION/data/…` → `data/…`, `TOOLS/tools/…` → `tools/…`.
+
+### Lists (minor release → refresh, as in 3PM)
+- `tools/lists-raw/{public_suffix_list.dat, hagezi-dyndns.txt, hagezi-hoster.txt}` replaced by 3PM 5.0's cached
+  snapshots (PSL sha256:762b6cbdd2da; HaGeZi Badware Hoster 2026.1105.2349.38) and rebuilt with DS's own tools
+  (update-psl.mjs, update-domain-age-lists.mjs, update-lists.mjs — no network). Result: every one of the 11 data
+  payloads is byte-identical to 3PM 5.0.8's `lib/downloadsentinel/util/*.default.js`. The eight unchanged default
+  files were left untouched (only their "Generated" stamp would have changed). fp-sweep: no verdict changed.
+
+### Hardening
+- manifest.json `content_security_policy.extension_pages`: `script-src 'self'; object-src 'none'; base-uri 'none';
+  form-action 'none';` (3PM 5.0.6). DS's pages have no forms, plug-ins or `<base>` — checked before adding.
+- New `util/MessageGate.js` (pure; 3PM core/message-gate.js in DS's module style): `senderKind()`,
+  `isMessageAllowed()`, `senderLabel()`. The router's guard 2: a sender must be one of DS's own pages (URL starts
+  with the extension origin), not only carry DS's id, and the type must be a known MSG.*; a refusal is logged with
+  the origin only. The warning page's VT_RESULT_UPDATE listener now checks its sender the same way.
+- `SUBMIT_URL_TO_VT` (still unsent — KNOWN_UNSENT) took its download id from the message body; it now uses the
+  warning page's own URL like GET_PENDING_CHECK / DISMISS_CHECK (v3.3.0 item 9, 3PM C28), so the route is safe
+  once it is wired up.
+- BrowserProtection: the "Invalid URL, skipping VT check" warning no longer prints the address (C52).
+
+### Tools
+- `tools/package-release.mjs` (3PM 5.0.7 package-release + check-permission-additions, one file): declares the
+  three zips (EXTENSION = runtime files only; DOCS = DOC_FILES under `DOCS/`; TOOLS = `tools/` without
+  node_modules), guards contents, version congruence (manifest, tools/package.json, CHANGELOG.md top entry,
+  CHANGELOG_HISTORY.md entry) and permission additions against `tools/release-state.json` (seeded with 3.5.6's
+  permissions). `--zip <dir>` cuts the three zips, `--record` stores a published release's permissions.
+  complete-check step 18 runs the guard (hard gate).
+- `tools/tests/UntrustedInput.test.js`: seeded fuzz (fixed seed) of UrlUtils and FilenameAnalysis.classifyDownload
+  with hostile addresses, names and MIME types; the message gate; the no-address-in-logs scan; the CSP.
+  Fault-verified: putting the address back into the BrowserProtection log line fails it.
+- fp-sweep.mjs takes its root from repoPaths (it computed the old TOOLS/ root itself).
+
+**tools 3.6.0:** layout + package-release.mjs + UntrustedInput.test.js (above).
+
+**Consumers checked (consumer inventory):** sender checks — background.js router and WarningPage.js push listener
+(the popup and options pages only send); download-id-from-sender — GET_PENDING_CHECK, DISMISS_CHECK, SUBMIT_URL_TO_VT;
+logging — every console call in background.js, util/, protection/, pages/ (scan in the test); layout — every
+tools script and test that builds a path (grep on EXTENSION/, TOOLS/, dirname chains), package.json scripts, knip.json,
+data-sources.json; lists — all 11 payloads compared with 3PM.
+
+**Known limitations.** Loading the repo root unpacked after `npm install` in `tools/` lets Chrome see
+`tools/node_modules` (it refuses files starting with "_"): load the EXTENSION zip, or a copy without `tools/`.
+Pre-existing, left as is: util/Brands.js header counts (derived-literals advisory), dangling references to
+DOCS/ARCHITECTURE.md and DOCS/THIRD_PARTY_* (not in any docs package).
+
+---
+
 ## 3.5.6 — small signals add up when heuristics are the only indicator and the source is dubious (2026-11-09)
 
 Source worked from: DownloadSentinel 3.5.5 (DOCS/EXTENSION/TOOLS zips) together with 3P Matrix 5.0.3, built as

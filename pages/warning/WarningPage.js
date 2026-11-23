@@ -28,6 +28,7 @@
 
 import { APP } from "../../util/AppConstants.js";
 import { MSG } from "../../util/MessageTypes.js";
+import { MessageGate } from "../../util/MessageGate.js";   // v3.6.0 — sender check on the VT_RESULT_UPDATE listener
 import { Settings } from "../../util/Settings.js";
 import { UrlUtils } from "../../util/UrlUtils.js";
 import { SCORING_CONFIG } from "../../protection/ScoringEngineV2.js";
@@ -596,8 +597,11 @@ const DNS_UNKNOWN_FALLBACK = "could not be verified";
     // — typically ~2-3 seconds — so nothing here needs its own progress/timer
     // UI; the update just arrives and this listener re-renders in place.
 
-    chrome.runtime.onMessage.addListener((msg) => {
-        if (msg.type !== MSG.VT_RESULT_UPDATE) return;
+    chrome.runtime.onMessage.addListener((msg, sender) => {
+        // v3.6.0 (3P Matrix 5.0.6 C46) — only this extension's own service worker pushes results here.
+        if (!sender || sender.id !== chrome.runtime.id ||
+            MessageGate.senderKind(sender, chrome.runtime.getURL("")) !== MessageGate.SENDER_KIND.EXTENSION_PAGE) return;
+        if (!msg || msg.type !== MSG.VT_RESULT_UPDATE) return;
         if (msg.downloadId !== downloadId)     return;
 
         // Merge the pushed fields into a synthetic data object and re-render

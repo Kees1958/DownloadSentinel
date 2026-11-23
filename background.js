@@ -16,6 +16,7 @@ import { DownloadShape } from "./util/DownloadShape.js"; // heuristics R1/R4 dec
 import { WarnPolicy } from "./protection/WarnPolicy.js"; // v3.5.2 — window or quiet (thresholds + exceptions), shared with 3P Matrix
 import { QuietLog } from "./util/QuietLog.js"; // v3.5.2 — quiet downloads: toolbar badge + popup list
 import { ActiveThreatHosts } from "./util/ActiveThreatHosts.js"; // v3.5.4 — active-threat delivery floor (ported from 3P Matrix 4.5.1)
+import { MessageGate } from "./util/MessageGate.js"; // v3.6.0 — router sender gate (3P Matrix 5.0.6 C46 / 5.0.7 C52)
 
 // ─────────────────────────────────────────────────────────────────────────────
 // background.js — Download Sentinel service worker
@@ -957,13 +958,24 @@ function downloadIdFromWarningPageSender(sender) {
     return Number.isFinite(id) ? id : null;
 }
 
+// This extension's own origin ("chrome-extension://<id>/") — an extension-page sender's URL starts with it.
+const EXTENSION_ORIGIN = chrome.runtime.getURL("");
+
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 
-    // v3.3.0 (item 8) — fail CLOSED: a missing sender.id used to pass this
+    // Guard 1 — v3.3.0 (item 8) — fail CLOSED: a missing sender.id used to pass this
     // check (sender.extensionId && ... was only ever checked when the field
     // was present at all); only a confirmed match to our own extension id
     // is accepted now.
     if (!sender || sender.id !== chrome.runtime.id) return;
+
+    // Guard 2 — v3.6.0 (3P Matrix 5.0.6 C46): the id alone is not enough — a content script carries it too.
+    // Only this extension's own pages may talk to the router, and only with a known message type. A refusal is
+    // logged with the sender's origin only (3P Matrix 5.0.7 C52 — a full address can carry a token).
+    if (!MessageGate.isMessageAllowed(msg?.type, MessageGate.senderKind(sender, EXTENSION_ORIGIN))) {
+        console.warn("[DS:router] refused", String(msg?.type), "from", MessageGate.senderLabel(sender));
+        return;
+    }
 
     switch (msg.type) {
 
@@ -991,7 +1003,11 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
             return true;
 
         case MSG.SUBMIT_URL_TO_VT: {
-            const record = pendingChecks.get(msg.downloadId);
+            // v3.6.0 — like GET_PENDING_CHECK / DISMISS_CHECK: the download is the one in the warning page's
+            // own URL (v3.3.0 item 9), never a downloadId from the message body (3P Matrix C28).
+            const downloadId = downloadIdFromWarningPageSender(sender);
+            if (downloadId === null) { sendResponse({ success: false, error: "not the warning page" }); return true; }
+            const record = pendingChecks.get(downloadId);
             if (!record) {
                 sendResponse({ success: false, error: "Download not found" });
                 return true;
@@ -1010,7 +1026,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
                 sendResponse({ success: true });
 
                 // Delegate to the named helper (audit item C1 — no more inline IIFE)
-                submitAndPollVt(msg.downloadId, cleanUrl, urlId, settings);
+                submitAndPollVt(downloadId, cleanUrl, urlId, settings);
             });
             return true;
         }

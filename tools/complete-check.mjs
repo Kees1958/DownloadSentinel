@@ -26,11 +26,12 @@
 // unused-dependency detection (depcheck), a duplicate-code scan (jscpd), a
 // manifest/package.json version-sync check, (v3.2.0, 3P Matrix alignment
 // §5) an external-data-source freshness advisory against data-sources.json,
-// and (v3.4.0) a Manifest V3 compliance gate (tools/check-mv3.mjs).
+// (v3.4.0) a Manifest V3 compliance gate (tools/check-mv3.mjs), and (v3.6.0)
+// the release-contents + permission gate (tools/package-release.mjs).
 //
 // Pass/fail semantics: syntax, ESLint, JSON validity, file cross-reference,
 // message routing, unit tests, circular deps, version sync, MV3
-// compliance, the false-positive sweep and (v3.5.5) the list snapshot rule are hard gates (FAIL blocks a release). knip, depcheck, jscpd, and list freshness
+// compliance, the false-positive sweep, (v3.5.5) the list snapshot rule and (v3.6.0) release contents are hard gates (FAIL blocks a release). knip, depcheck, jscpd, and list freshness
 // are soft checks (WARN only) — their findings are worth reviewing but
 // shouldn't block a zip on their own; see each step's own comment for why.
 //
@@ -566,6 +567,22 @@ function checkFpSweep() {
   }
 }
 
+// ── 18. Release contents + permissions (v3.6.0) ─────────────────────────────
+// HARD gate — delegates to package-release.mjs (from 3P Matrix 5.0.7): the extension zip may hold runtime files
+// only, versions are congruent (manifest / tools package / both changelogs), and no permission was added since the
+// recorded release (release-state.json) without approval.
+function checkReleaseContents() {
+  console.log("\n── 18. Release contents + permissions ──");
+  const script = path.join(TOOLS_ROOT, "package-release.mjs");
+  if (!existsSync(script)) { fail("package-release.mjs not found — release contents not checked"); return; }
+  try {
+    const out = execFileSync(process.execPath, [script], { cwd: TOOLS_ROOT, stdio: "pipe" }).toString();
+    ok(out.trim().split("\n").pop().replace(/^package-release:\s*/, ""));
+  } catch (e) {
+    fail(`package-release failed:\n${(e.stdout || "").toString()}${(e.stderr || "").toString() || e.message}`);
+  }
+}
+
 // ── Run ──────────────────────────────────────────────────────────────────────
 checkSyntax();
 checkLint();
@@ -584,6 +601,7 @@ checkCompatRemove();
 checkDerivedLiterals();
 checkMv3();
 checkFpSweep();
+checkReleaseContents();
 
 console.log();
 if (failed) {

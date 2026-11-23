@@ -2,6 +2,21 @@
 
 Short, per-release summary of what changed. The full technical account is CHANGELOG_HISTORY.md.
 
+## 3.6.0
+- **Built-in lists refreshed** (minor release; the same snapshots 3P Matrix 5.0 ships, so both extensions again
+  carry identical list data): Public Suffix List and hosting-platform list (Public Suffix List of 2026-11-06), and
+  the risky-hosting table (HaGeZi DynDNS and Badware Hoster of 5 November 2026). Popular-sites and RDAP lists were
+  already current.
+- **Hardening** (from 3P Matrix 5.0.6–5.0.7): DownloadSentinel's own pages now refuse plug-ins, forms and
+  page-address tricks; only DownloadSentinel's own pages may send it messages (not just anything carrying its id);
+  the VirusTotal re-check message acts only on the download of the warning page that sent it; a refused message
+  is logged with the sender's site only, and no log line contains a download address any more.
+- Downloads are judged exactly as in 3.5.6 — 3P Matrix 5.0.5–5.0.8 changed nothing in the download check.
+- Project: the GitHub repository now holds the unpacked source like uBlock Dynamic and 3P Matrix (extension in the
+  root, `tools/`, changelogs in the root). Tools: one new release check (only runtime files in the extension zip,
+  versions match, no new permission without approval) that can also cut the three zips, and new seeded fuzz tests
+  for download addresses, file names and the message gate.
+
 ## 3.5.6
 - **Small warning signs now add up when they are all we have, from a dubious source.** Until now a sign weaker
   than −15 (e.g. "file served via a script or parameter") never counted next to a stronger one. Now it does — with

@@ -1,6 +1,6 @@
 {
   "name": "download-sentinel",
-  "version": "3.5.6",
+  "version": "3.6.0",
   "description": "Warns for potentially harmful downloads.",
   "private": true,
   "type": "module",

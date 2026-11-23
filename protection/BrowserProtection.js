@@ -428,7 +428,7 @@ export const BrowserProtection = (function () {
             // UrlUtils re-parses as needed downstream — only the validity check is.
             try { new URL(url); }
             catch {
-                console.warn("[DS:BrowserProtection] Invalid URL, skipping VT check:", url);
+                console.warn("[DS:BrowserProtection] Invalid URL, skipping VT check");   // v3.6.0: no address in logs (3P Matrix C52)
                 return;
             }
 

@@ -1,0 +1,22 @@
+{
+  "version": "3.5.6",
+  "shippedPermissions": {
+    "permissions": [
+      "alarms",
+      "downloads",
+      "storage"
+    ],
+    "host_permissions": [
+      "https://dns.quad9.net/*",
+      "https://freedns.controld.com/*",
+      "https://rdap.org/*",
+      "https://security.cloudflare-dns.com/*",
+      "https://www.virustotal.com/*"
+    ],
+    "optional_permissions": [],
+    "optional_host_permissions": [
+      "https://doh.cleanbrowsing.org/*",
+      "https://protective.joindns4.eu/*"
+    ]
+  }
+}

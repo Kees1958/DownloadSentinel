@@ -5,10 +5,10 @@
 # Issues: https://github.com/hagezi/dns-blocklists/issues
 # Disclaimer: https://github.com/hagezi/dns-blocklists/blob/main/README.md#disclaimer
 # Expires: 8 hours
-# Last modified: 03 Oct 2026 09:16 UTC
-# Version: 2026.1003.0916.12
+# Last modified: 03 Nov 2026 10:40 UTC
+# Version: 2026.1103.1040.51
 # Syntax: Domains (without subdomains)
-# Number of entries: 1535
+# Number of entries: 1533
 #
 dyn.addr.tools
 changeip.co.uk
@@ -28,6 +28,7 @@ limit.org.uk
 h4g3z1-dyndns.web.app
 dyndns.za.org
 0000000000000000000000.com
+001www.com
 0rg.us
 0x.no
 100mountain.com
@@ -87,9 +88,7 @@ anal-slavery.com
 anastasion.com
 aneisa.com
 angelcamddns.com
-annaffiare.org
 anondns.net
-antongorbunov.com
 any64.de
 anyitsolution.com
 api64.de
@@ -125,7 +124,6 @@ baden.ru
 bagus.org
 baikabibai.com
 bakli.ru
-barbaforte.org
 barrel-of-knowledge.info
 barrell-of-knowledge.info
 baselinux.net
@@ -216,6 +214,7 @@ cloudns.ph
 cloudns.pro
 cloudwatch.net
 cloudxns.net
+cmirg.com
 cnstefancelmare.ro
 coalnet.ru
 codns.com
@@ -224,7 +223,6 @@ collegefan.org
 compress.to
 compuinter.com
 computersforpeace.net
-compy.ca
 con-ip.com
 conditsis.com
 contepsa.com
@@ -290,7 +288,6 @@ diskstation.me
 diskstation.org
 ditchyourip.com
 dive2.net
-divx.se
 diyplans.org
 dlinkddns.com
 dmtr.ru
@@ -444,7 +441,6 @@ dynme.ovh
 dynnamn.ru
 dynns.com
 dyns.be
-dyns.cx
 dyns.net
 dynserv.org
 dynssl.com
@@ -659,7 +655,6 @@ grupompr.com
 gslb.me
 gteksecurity.com
 gtk.cl
-guardz.ru
 guild-site.com
 gurcanozturk.com
 gurdit.com
@@ -1235,11 +1230,13 @@ route64.de
 routemehome.com
 roxa.org
 rpz.su
+rr.nu
 rtam.net
 rum.si
 run.place
 rundis.com
 ruok.org
+russkoeumea.com
 rwbcode.com
 ryointernational.com
 sandmeiers.ch
@@ -1363,6 +1360,7 @@ stfu-kthx.net
 stocktester.ru
 stoupin.ru
 strangled.net
+stroyexpert.org
 stuff-4-sale.org
 stuff-4-sale.us
 stufftoread.com
@@ -1370,6 +1368,7 @@ stughead.com
 stuns.org
 sumibi.org
 sundby.com
+surak.kz
 surfnet.ca
 suroot.com
 swoop2.me
@@ -1459,7 +1458,6 @@ venez.fr
 venez.net
 verymad.net
 viamisoftware.com
-vicinanza.org
 vicp.cc
 vicp.net
 vietnamddns.com
