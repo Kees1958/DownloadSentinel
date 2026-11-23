@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-// check-mv3.mjs  (DownloadSentinel: tools/, 3P Matrix: 3P-Matrix-tools/)
+// check-mv3.mjs  (both repos: tools/ — DownloadSentinel ≥ 3.6.0, 3P Matrix ≥ 5.0.9; 3P Matrix release zip: 3P-Matrix-tools/)
 //
 // v3.4.0 — Manifest V3 compliance check (hard gate in complete-check.mjs).
 // Static: reads manifest.json and parses every .js/.html file of the
@@ -15,7 +15,8 @@
 // Usage:
 //   node check-mv3.mjs [--ext|--extension <extension folder>] [--json]
 //     --ext / --extension   the extension folder (the one holding manifest.json);
-//                           default: ../../EXTENSION from this file (DownloadSentinel layout)
+//                           default: the folder above this file's tools/ folder (the repo layout of
+//                           both projects); 3P Matrix's release layout passes it explicitly
 //     --json  print findings as JSON (for other tools); default: text
 // Exit code: 0 = compliant, 1 = at least one finding, 2 = could not run.
 //
@@ -51,8 +52,8 @@ import { fileURLToPath } from "node:url";
 import * as espree from "espree";
 import * as eslintScope from "eslint-scope";
 
-// Repo layout (DownloadSentinel 3.6.0, = uBlock Dynamic / 3P Matrix): tools/check-mv3.mjs → the repo root IS the
-// extension (used only when no folder is given).
+// Repo layout (DownloadSentinel ≥ 3.6.0 and 3P Matrix ≥ 5.0.9, as uBlock Dynamic): tools/check-mv3.mjs → the repo
+// root IS the extension (used only when no folder is given).
 const DEFAULT_EXT_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const EXT_FLAGS = new Set(["--ext", "--extension"]);
 

@@ -38,8 +38,10 @@ add DS to its GitHub repo like uBD and 3PM, and port every 3PM improvement made 
   uses it: complete-check (syntax/all files vs. extension-only walk; the file cross-reference now also fails a path
   that resolves into `tools/`, since existence no longer proves "shipped"), check-compat-remove (one walk over the
   repo), madge/jscpd (repo root as cwd), knip (entry/project globs rewritten, symlinks into `tools/`).
-- `check-mv3.mjs` (shared with 3PM): default extension root = the repo root, `tools` added to the never-scanned
-  folders. **3PM's copy still defaults to the old `../../EXTENSION` and does not skip `tools/`** — to sweep there.
+- `check-mv3.mjs` (shared with 3PM): default extension root = the folder above `tools/` (the repo layout of both
+  projects), `tools` added to the never-scanned folders. Swept into 3P Matrix 5.0.9 the same day — the two copies
+  are byte-identical again (3PM's release layout passes `--ext`, as before). 3P Matrix 5.0.9 also made its own
+  tools run from its repo (tools/repo-layout.mjs) and corrected the DS paths in its lib/downloadsentinel comments.
 - The extension's ESLint config moved out of the shipped tree (`.eslintrc.json` → `tools/eslint-extension.json`,
   used with `--no-eslintrc -c`); package.json scripts follow the layout.
 - Paths in the list register (`feeds`, `updateScript`), recordBuiltFrom() calls, test imports and comments:
