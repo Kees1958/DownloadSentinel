@@ -80,7 +80,7 @@ _________________________  PRIVACY
 
 It does not monitor nor save or transmit any of the URL's your are visiting. Only the download URL is handled over to Virus Total when it is an executable or compressed file download and NOT on the whitelist. Normal downloads (PDF's word documents, spreadsheets, powerpoints, movies, pictures, etc) are skipped. 
 
-Privacy policy: https://github.com/Kees1958/DownloadSentinel/blob/main/privacy.md)
+Privacy policy: [privacy.md](https://github.com/Kees1958/DownloadSentinel/blob/main/privacy.md)
 
 
 _________________________ Issues or suggestions
