@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Download Sentinel</title>
+    <link rel="stylesheet" href="PopupPage.css">
+</head>
+
+<body id="background">
+
+<div id="banner" class="banner">
+    <img id="logo" class="logo" src="../../assets/icons/icon128.png" alt="Sentinel Logo">
+    <span class="banner-text">Download Sentinel</span>
+</div>
+
+<section class="content">
+
+    <div class="switch-row">
+        <div class="switch-group">
+            <span id="extSwitch" class="switch"></span>
+            <span id="extStatus" class="status-label"></span>
+        </div>
+    </div>
+
+    <div class="switch-row">
+        <div class="switch-group">
+            <span id="vtSwitch" class="switch off"></span>
+            <span id="vtStatus" class="status-label vt-label"></span>
+            <!-- Info icon — hover/focus reveals what the VT reputation check
+                 does and a link to request a free API key (v3.0.8) -->
+            <span id="vtInfoIcon" class="info-icon" tabindex="0"
+                  aria-label="About VirusTotal reputation checks">
+                <span class="info-icon-glyph">i</span>
+                <span id="vtInfoTooltip" class="info-tooltip">
+                    Download Sentinel can check every download against
+                    <strong>70+ antivirus engines</strong> — but only once
+                    you've added a free VirusTotal API key.
+                    <br><br>
+                    Joining VirusTotal and getting a key takes a minute and
+                    costs nothing.
+                    <br><br>
+                    <a href="#" id="vtInfoLink">Get a free VirusTotal API key →</a>
+                </span>
+            </span>
+        </div>
+    </div>
+
+    <!-- v3.5.2 — downloads checked without a warning window (util/QuietLog.js);
+         hidden when empty. Opening the popup clears the toolbar badge. -->
+    <div id="quietBox" class="quiet-box" hidden>
+        <div class="quiet-title">Checked without a warning window</div>
+        <ul id="quietList" class="quiet-list"></ul>
+    </div>
+    <button id="optionsBtn" class="options-btn">OPTIONS</button>
+
+</section>
+
+<!-- Single ES module entry point — PopupPage.js imports its own dependencies -->
+<script src="PopupPage.js" type="module"></script>
+
+</body>
+</html>

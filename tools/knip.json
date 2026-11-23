@@ -1,0 +1,15 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": [
+    "background.js",
+    "pages/popup/PopupPage.js",
+    "pages/options/OptionsPage.js",
+    "pages/warning/WarningPage.js",
+    "pages/vtkeyprompt/VtKeyPrompt.js",
+    "tools/check-mv3.mjs"
+  ],
+  "project": [
+    "**/*.js",
+    "!tools/**"
+  ]
+}

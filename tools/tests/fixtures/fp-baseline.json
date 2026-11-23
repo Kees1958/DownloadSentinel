@@ -1,0 +1,508 @@
+{
+  "knownGood": {
+    "https://go.microsoft.com/fwlink/?linkid=2203531": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://dl.google.com/chrome/install/ChromeSetup.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://dl.google.com/android/studio/install/2024.1.1.1/android-studio-2024.1.1.1-windows.exe": {
+      "classification": "Probably Inconclusive",
+      "score": -20,
+      "breakdown": [
+        "SizeCheck: -20"
+      ]
+    },
+    "https://download.mozilla.org/?product=firefox-latest&os=win64": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://ardownload2.adobe.com/pub/adobe/reader/win/AcroRdrDC2400120432_en_US.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://zoom.us/client/latest/ZoomInstaller.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://slack.com/downloads/instructions/windows?build=x64": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://nodejs.org/dist/v22.11.0/node-v22.11.0-x64.msi": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://www.python.org/ftp/python/3.13.0/python-3.13.0-amd64.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://update.code.visualstudio.com/latest/win32-x64/stable": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://github.com/git-for-windows/git/releases/download/v2.47.0.windows.1/Git-2.47.0-64-bit.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://objects.githubusercontent.com/github-production-release-asset-2e65be/1234567/abcdef": {
+      "classification": "Probably Inconclusive",
+      "score": -5,
+      "breakdown": [
+        "RiskyHosting: -5"
+      ]
+    },
+    "https://codeload.github.com/nodejs/node/zip/refs/heads/main": {
+      "classification": "Probably Inconclusive",
+      "score": -5,
+      "breakdown": [
+        "RiskyHosting: -5"
+      ]
+    },
+    "https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh": {
+      "classification": "Probably Inconclusive",
+      "score": -25,
+      "breakdown": [
+        "ScriptFormat: -25",
+        "RiskyHosting: -10"
+      ]
+    },
+    "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh": {
+      "classification": "Probably Inconclusive",
+      "score": -25,
+      "breakdown": [
+        "ScriptFormat: -25",
+        "RiskyHosting: -10"
+      ]
+    },
+    "https://sh.rustup.rs": {
+      "classification": "Probably Inconclusive",
+      "score": -25,
+      "breakdown": [
+        "ScriptFormat: -25"
+      ]
+    },
+    "https://ohmyz.sh/install": {
+      "classification": "Probably Inconclusive",
+      "score": -25,
+      "breakdown": [
+        "ScriptFormat: -25"
+      ]
+    },
+    "https://astral.sh/uv/install.sh": {
+      "classification": "Probably Inconclusive",
+      "score": -25,
+      "breakdown": [
+        "ScriptFormat: -25"
+      ]
+    },
+    "https://get.docker.com": {
+      "classification": "Probably Inconclusive",
+      "score": -25,
+      "breakdown": [
+        "ScriptFormat: -25"
+      ]
+    },
+    "https://releases.ubuntu.com/24.04/ubuntu-24.04.1-desktop-amd64.iso": {
+      "classification": "Probably Inconclusive",
+      "score": -20,
+      "breakdown": [
+        "SizeCheck: -20"
+      ]
+    },
+    "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.7.0-amd64-netinst.iso": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://download.fedoraproject.org/pub/fedora/linux/releases/41/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-41-1.4.iso": {
+      "classification": "Probably Inconclusive",
+      "score": -20,
+      "breakdown": [
+        "SizeCheck: -20"
+      ]
+    },
+    "https://files.pythonhosted.org/packages/ab/cd/requests-2.32.3-py3-none-any.whl": {
+      "classification": "Not monitored",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://registry.npmjs.org/left-pad/-/left-pad-1.3.0.tgz": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://cdn.jsdelivr.net/npm/vue@3.5.12/dist/vue.global.js": {
+      "classification": "Probably Suspicious",
+      "score": -37,
+      "breakdown": [
+        "ScriptFormat: -25",
+        "DomainList: -24"
+      ]
+    },
+    "https://dbeaver.io/files/dbeaver-ce-latest-x86_64-setup.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://download.jetbrains.com/idea/ideaIC-2024.3.exe": {
+      "classification": "Probably Inconclusive",
+      "score": -20,
+      "breakdown": [
+        "SizeCheck: -20"
+      ]
+    },
+    "https://downloads.sourceforge.net/project/sevenzip/7-Zip/23.01/7z2301-x64.exe": {
+      "classification": "Probably Inconclusive",
+      "score": -12,
+      "breakdown": [
+        "RiskyHosting: -12"
+      ]
+    },
+    "https://dl.dropboxusercontent.com/s/abc123/project-report.pdf.zip": {
+      "classification": "Probably Inconclusive",
+      "score": -7,
+      "breakdown": [
+        "RiskyHosting: -7"
+      ]
+    },
+    "https://dl.dropbox.com/s/xyz987/presentation.pptx": {
+      "classification": "Not monitored",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://www.virtualbox.org/download/7.1.4/VirtualBox-7.1.4-164913-Win.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://download.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/PowerShell-7.4.6-win-x64.msi": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://dl.bintray.com/anaconda-main/Anaconda3-2024.10-1-Windows-x86_64.exe": {
+      "classification": "Probably Inconclusive",
+      "score": -20,
+      "breakdown": [
+        "SizeCheck: -20"
+      ]
+    },
+    "https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh": {
+      "classification": "Probably Inconclusive",
+      "score": -25,
+      "breakdown": [
+        "ScriptFormat: -25",
+        "SizeCheck: -20"
+      ]
+    },
+    "https://d2lang.com/tour/install.sh": {
+      "classification": "Probably Inconclusive",
+      "score": -25,
+      "breakdown": [
+        "ScriptFormat: -25"
+      ]
+    },
+    "https://sdk.cloud.google.com": {
+      "classification": "Probably Inconclusive",
+      "score": -25,
+      "breakdown": [
+        "ScriptFormat: -25"
+      ]
+    },
+    "https://releases.hashicorp.com/terraform/1.9.8/terraform_1.9.8_windows_amd64.zip": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://golang.org/dl/go1.23.3.windows-amd64.msi": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://ftp.gnu.org/gnu/wget/wget-1.24.5.tar.gz": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://ftp.openbsd.org/pub/OpenBSD/7.6/amd64/install76.iso": {
+      "classification": "Probably Inconclusive",
+      "score": -20,
+      "breakdown": [
+        "SizeCheck: -20"
+      ]
+    },
+    "https://download.libreoffice.org/libreoffice/stable/24.8.3/win/x86_64/LibreOffice_24.8.3_Win_x86-64.msi": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://cran.r-project.org/bin/windows/base/R-4.4.2-win.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://download.docker.com/linux/debian/dists/bookworm/pool/stable/amd64/docker-ce_27.3.1-1_amd64.deb": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://cachefly.cdn.unrealengine.com/Builds/UnrealEngine-5.4.4/UnrealEngine-5.4.4.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://aka.ms/vs/17/release/vs_community.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://releases.hugo.io/hugo_extended_0.136.5_windows-amd64.zip": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://download.blender.org/release/Blender4.2/blender-4.2.3-windows-x64.msi": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://www.gimp.org/downloads/gimp-2.10.38-setup.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://nodejs.org/dist/v22.11.0/node-v22.11.0-linux-x64.tar.xz": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://download.sublimetext.com/sublime_text_build_4169_x64_setup.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://www.amazon.com/clouddrive/downloads/AmazonPhotosSetup.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://www.paypal.com/myaccount/transfer/PayPalAppSetup.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://www.microsoft.com/en-us/software-download/windows11.iso": {
+      "classification": "Probably Inconclusive",
+      "score": -20,
+      "breakdown": [
+        "SizeCheck: -20"
+      ]
+    },
+    "https://www.apple.com/itunes/download/win64": {
+      "classification": "Probably Inconclusive",
+      "score": -7,
+      "breakdown": [
+        "SketchyUrl: -7"
+      ]
+    }
+  },
+  "stagingSynthetic": {
+    "https://invoice-portal.duckdns.org/Remittance_Advice.iso": {
+      "classification": "Probably Malicious",
+      "score": -66,
+      "breakdown": [
+        "DomainList: -66"
+      ]
+    },
+    "https://secure-update.hopto.org/update.hta": {
+      "classification": "Probably Malicious",
+      "score": -98,
+      "breakdown": [
+        "DomainList: -63",
+        "MimeCheck: -45",
+        "ScriptFormat: -25"
+      ]
+    },
+    "https://tracking-dhl.sytes.net/Shipment_Tracking.one": {
+      "classification": "Probably Malicious",
+      "score": -63,
+      "breakdown": [
+        "DomainList: -63"
+      ]
+    },
+    "https://cdn-docs.examplefiles.top/remit/Remittance_Advice_0923.iso": {
+      "classification": "Probably Suspicious",
+      "score": -37,
+      "breakdown": [
+        "TldList: -37"
+      ]
+    },
+    "https://files.myfirewall.org/invoice.zip.url": {
+      "classification": "Probably Suspicious",
+      "score": -50,
+      "breakdown": [
+        "DoubleExtension: -50"
+      ]
+    },
+    "https://portal-login.mooo.com/secure-document.settingcontent-ms": {
+      "classification": "Probably Malicious",
+      "score": -63,
+      "breakdown": [
+        "DomainList: -63"
+      ]
+    },
+    "https://update-required.shop/chrome-update.hta": {
+      "classification": "Probably Malicious",
+      "score": -68,
+      "breakdown": [
+        "MimeCheck: -45",
+        "TldList: -34",
+        "ScriptFormat: -25"
+      ]
+    },
+    "https://keygen-crack.top/activator.exe": {
+      "classification": "Probably Suspicious",
+      "score": -37,
+      "breakdown": [
+        "TldList: -37"
+      ]
+    },
+    "https://overdue-payment.zip/statement.exe": {
+      "classification": "Probably Suspicious",
+      "score": -50,
+      "breakdown": [
+        "TldList: -50"
+      ]
+    },
+    "https://aimbot-injector.click/wallhack.exe": {
+      "classification": "Probably Suspicious",
+      "score": -42,
+      "breakdown": [
+        "TldList: -42"
+      ]
+    },
+    "https://free-robux-generator.cfd/spoofer.exe": {
+      "classification": "Probably Suspicious",
+      "score": -42,
+      "breakdown": [
+        "TldList: -42"
+      ]
+    },
+    "https://waybill-customs.serveftp.com/tracking.iqy": {
+      "classification": "Probably Malicious",
+      "score": -63,
+      "breakdown": [
+        "DomainList: -63"
+      ]
+    },
+    "https://fax-voicemail.zapto.org/voicemail-fax.appx": {
+      "classification": "Probably Malicious",
+      "score": -63,
+      "breakdown": [
+        "DomainList: -63"
+      ]
+    },
+    "https://final-notice-action-required.online/past-due-statement.iso": {
+      "classification": "Probably Suspicious",
+      "score": -32,
+      "breakdown": [
+        "TldList: -32",
+        "SketchyUrl: -4"
+      ]
+    },
+    "https://nulled-warez.icu/full-version-activator.exe": {
+      "classification": "Probably Suspicious",
+      "score": -35,
+      "breakdown": [
+        "TldList: -35"
+      ]
+    },
+    "https://secure-esignature.servehttp.com/document.library-ms": {
+      "classification": "Probably Malicious",
+      "score": -63,
+      "breakdown": [
+        "DomainList: -63"
+      ]
+    },
+    "https://123freehost.co.uk/scan-document.xll": {
+      "classification": "Probably Suspicious",
+      "score": -45,
+      "breakdown": [
+        "HostList: -45"
+      ]
+    },
+    "https://flow.page/receipt-payment-refund.exe": {
+      "classification": "Probably Suspicious",
+      "score": -35,
+      "breakdown": [
+        "HostList: -35"
+      ]
+    },
+    "https://000webhostapp.com/purchase-order-quotation.exe": {
+      "classification": "Probably Suspicious",
+      "score": -45,
+      "breakdown": [
+        "HostList: -45"
+      ]
+    },
+    "https://mywire.org/customs-waybill-tracking.diagcab": {
+      "classification": "Probably Malicious",
+      "score": -63,
+      "breakdown": [
+        "DomainList: -63"
+      ]
+    },
+    "https://invoice-portal.duckdns.org/invoice.exe": {
+      "classification": "Probably Malicious",
+      "score": -100,
+      "breakdown": [
+        "RloObfuscation: -80",
+        "DomainList: -66"
+      ]
+    },
+    "https://free-software.hopto.org/Invoice_PDF_download.exe": {
+      "classification": "Probably Malicious",
+      "score": -100,
+      "breakdown": [
+        "PaddedDoubleExtension: -80",
+        "DomainList: -63"
+      ]
+    },
+    "https://arnazon.com/order/confirm-payment.exe": {
+      "classification": "Probably Safe",
+      "score": 0,
+      "breakdown": []
+    },
+    "https://bit.ly/3xFakeInvoice": {
+      "classification": "Probably Suspicious",
+      "score": -49,
+      "breakdown": [
+        "DomainList: -42",
+        "UrlShortener: -15"
+      ]
+    }
+  }
+}

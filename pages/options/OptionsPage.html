@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Download Sentinel — Options</title>
+    <link rel="stylesheet" href="OptionsPage.css">
+</head>
+
+<body>
+
+<!-- Banner -->
+<div id="banner" class="banner">
+    <img id="logo" class="logo" src="../../assets/icons/icon128.png" alt="Sentinel Logo">
+    <span class="banner-text">Download Sentinel — Options</span>
+</div>
+
+<div class="page-wrapper">
+<div class="options-card">
+
+    <!-- ── VT API Key section ── -->
+    <div class="section-header">
+        <h2>VirusTotal API Key</h2>
+    </div>
+
+    <p class="unlock-text">
+        Unlock the options by entering a Virus Total API key &nbsp;
+        <a href="https://www.virustotal.com/gui/join-us" target="_blank" class="link-yellow">Get a free API key</a>
+    </p>
+
+    <div class="api-key-block">
+        <div class="api-row">
+            <input type="password" id="vtApiKeyInput" class="api-input"
+                   placeholder="Paste your VT API key (64 hex characters)…"
+                   autocomplete="off" spellcheck="false">
+            <button id="saveKeyBtn" class="btn btn-save btn-save-inactive">Save</button>
+            <button id="clearKeyBtn" class="btn btn-clear">Clear</button>
+        </div>
+        <div id="apiKeyMsg" class="api-msg"></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── Silent when inconclusive ── -->
+    <div id="silentWhenInconclusiveSection" class="section locked">
+        <div class="section-header">
+            <label class="toggle-label">
+                <input type="checkbox" id="silentWhenInconclusiveToggle">
+                <h2 style="margin:0;cursor:pointer;">Silent when inconclusive</h2>
+            </label>
+        </div>
+        <p class="opt-hint" style="margin-top:8px;">
+            Off by default. When enabled, a download that is neither clearly safe nor clearly risky
+            stays quiet below the false-positive setting's threshold (see below); while off, every
+            such download still gets a warning window.
+        </p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── Silent when probably safe ── -->
+    <div id="autoAllowSection" class="section locked">
+        <div class="section-header">
+            <label class="toggle-label">
+                <input type="checkbox" id="autoAllowToggle">
+                <h2 style="margin:0;cursor:pointer;">Silent when probably safe</h2>
+            </label>
+        </div>
+        <p class="opt-hint" style="margin-top:8px;">
+            When enabled, no warning is shown when risk score is above minimum level
+        </p>
+        <div id="autoAllowThresholdRow" class="auto-allow-threshold-row" style="display:none;">
+            <span class="opt-hint" style="margin:0;">Minimum risk score to auto-proceed:</span>
+            <input type="number" id="autoAllowThreshold" class="threshold-input" min="30" max="100" value="80">
+            <span class="opt-hint" style="margin:0;">% &nbsp;(30–100, default 80)</span>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── False positive reduction ── -->
+    <div id="fpSection" class="section locked">
+        <div class="section-header">
+            <h2>False Positive Reduction</h2>
+        </div>
+        <p class="opt-hint">Higher = fewer false alarms: filters VirusTotal results and sets from which score a download gets a warning window.</p>
+        <div class="fp-row">
+            <input type="range" id="fpSlider" class="fp-slider" min="0" max="3" step="1" value="1">
+        </div>
+        <div class="fp-grid-labels" id="fpGridLabels">
+            <span data-index="0">HIGH</span>
+            <span data-index="1">MEDIUM</span>
+            <span data-index="2">LOW</span>
+            <span data-index="3">NONE</span>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── DNS threat-intel checks (choose 2 of 5) ── -->
+    <div id="dnsSection" class="section locked">
+        <div class="section-header">
+            <h2>Threat-intel DNS — two of five</h2>
+        </div>
+        <p class="opt-hint">
+            Asks two security DNS services whether they block the domain as malware or phishing.
+        </p>
+        <div class="color-row">
+            <label class="color-label" style="flex-direction:column;align-items:flex-start;gap:4px;">
+                First DNS check
+                <select id="dnsFirst" class="api-input"></select>
+            </label>
+            <label class="color-label" style="flex-direction:column;align-items:flex-start;gap:4px;">
+                Second DNS check
+                <select id="dnsSecond" class="api-input"></select>
+            </label>
+        </div>
+        <p class="opt-hint">
+            Pick two you do <em>not</em> already use as your own DNS — that one already blocks bad sites.
+        </p>
+        <p class="opt-hint">
+            Using NextDNS with "Block Bypass Methods"? Allow the hosts of both checks there.
+            An unreachable check shows as "check unavailable", never as safe.
+        </p>
+        <div id="dnsStatus" class="api-msg" role="status"></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── Domain whitelist ── -->
+    <div id="domainSection" class="section locked">
+        <div class="section-header">
+            <h2>Trusted Domains (Do Not Check)</h2>
+        </div>
+
+        <!-- v3.3.0 (3P Matrix alignment item 25) — categorized, always-on
+             trust groups, shown the same way so the user can see at a
+             glance what's already trusted before ever touching the custom
+             list below. "Trust app stores" is informational only (these
+             platforms are curated/reviewed by the store itself — see
+             APP.BUILTIN_DO_NOT_CHECK_DOMAINS's own comment — so it is not a
+             toggle); "Trust AI downloads" is opt-in since it widens what's
+             skipped to a category of sites the user may not use at all. -->
+        <div class="trust-category">
+            <span class="toggle-text">Trust app stores</span>
+            <p class="opt-hint">
+                Always skipped: <span id="builtinDomains"></span>
+            </p>
+        </div>
+
+        <div class="trust-category">
+            <label class="toggle-label">
+                <input type="checkbox" id="trustAiDownloadsCheckbox">
+                <span class="toggle-text">Trust AI downloads</span>
+            </label>
+            <p class="opt-hint">
+                Skip checks for files downloaded from: <span id="aiDownloadDomains" class="mono"></span>.
+                These are sandboxed, in-browser-generated files (chat exports, generated documents
+                and images) from well-known AI assistants — not files hosted at an address an
+                attacker controls.
+            </p>
+        </div>
+
+        <p class="opt-hint" style="margin-top:14px;">
+            Add up to 12 extra domains (format: <span class="mono">domain.tld</span>):
+        </p>
+        <div id="domainInputs" class="domain-grid">
+            <!-- 12 inputs rendered by JS -->
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── Personalize warning page (collapsible) ── -->
+    <div id="personalizeSection" class="section locked">
+        <div class="section-header personalize-header" id="personalizeToggle">
+            <label class="toggle-label">
+                <input type="checkbox" id="personalizeCheckbox">
+                <span class="toggle-text" style="font-size:15px;">Personalize warning page</span>
+            </label>
+        </div>
+
+        <div id="personalizeContent" style="display:none;">
+
+            <hr class="divider" style="margin-top:14px;">
+
+            <!-- Warning background color -->
+            <div id="colorSection">
+                <div class="section-header">
+                    <h2>Warning Page Background Color</h2>
+                </div>
+                <p class="opt-hint">Default is Google Red (179, 38, 30). Enter custom RGB values:</p>
+                <div class="color-row">
+                    <label class="color-label">Red:
+                        <input type="number" id="colorR" class="color-input" min="0" max="255" placeholder="179">
+                    </label>
+                    <label class="color-label">Green:
+                        <input type="number" id="colorG" class="color-input" min="0" max="255" placeholder="38">
+                    </label>
+                    <label class="color-label">Blue:
+                        <input type="number" id="colorB" class="color-input" min="0" max="255" placeholder="30">
+                    </label>
+                    <div id="colorPreview" class="color-preview" title="Preview"></div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Warning window title -->
+            <div id="titleSection">
+                <div class="section-header">
+                    <h2>Warning Window Titles</h2>
+                </div>
+                <div class="api-row">
+                    <input type="text" id="warningTitleInput" class="api-input"
+                           placeholder="Download requires your attention!"
+                           maxlength="80" autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+
+        </div><!-- personalizeContent -->
+    </div>
+
+    <hr class="divider">
+
+    <div class="save-all-row">
+        <button id="saveAllBtn" class="btn btn-save">Save All Settings</button>
+        <div id="saveAllMsg" class="api-msg"></div>
+    </div>
+
+</div><!-- .options-card -->
+</div><!-- .page-wrapper -->
+
+<!-- Single ES module entry point — OptionsPage.js imports its own dependencies -->
+<script src="OptionsPage.js" type="module"></script>
+
+</body>
+</html>

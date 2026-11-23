@@ -1,0 +1,29 @@
+{
+  "name": "download-sentinel",
+  "version": "3.5.6",
+  "description": "Warns for potentially harmful downloads.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "cd .. && eslint --no-eslintrc -c tools/eslint-extension.json --ignore-pattern tools/ --ext .js . && cd tools && eslint . --ext .js",
+    "test": "node --test",
+    "test:coverage": "c8 --reporter=text --reporter=html node --test",
+    "circular": "cd .. && madge --circular --extensions js --exclude node_modules .",
+    "unused": "node run-knip.mjs",
+    "deps": "depcheck",
+    "duplicates": "cd .. && jscpd --min-lines 5 --min-tokens 40 --ignore \"**/node_modules/**,**/tests/**,**/package-lock.json,**/lists-raw/**,pages/**/*.css\" .",
+    "mv3": "node check-mv3.mjs",
+    "check": "node complete-check.mjs"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "c8": "^12.0.0",
+    "depcheck": "^1.4.7",
+    "eslint": "^8.57.1",
+    "eslint-scope": "^7.2.2",
+    "espree": "^9.6.1",
+    "jscpd": "^5.1.2",
+    "knip": "^6.34.0",
+    "madge": "^8.0.0"
+  }
+}

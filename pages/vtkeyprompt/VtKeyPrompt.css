@@ -1,0 +1,95 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after { box-sizing: border-box; }
+
+body, html {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    background-color: rgb(40, 40, 40);
+    color: rgb(220, 220, 220);
+}
+
+.prompt-card {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ===== Banner — same palette as Options/Warning pages' yellow "no key" state ===== */
+.banner {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 12px;
+    background-color: rgb(243, 186, 34);
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.banner-text {
+    font-size: 17px;
+    font-weight: 600;
+    /* Black on the yellow banner reads far better than white — matches the
+       contrast fix applied to the Options/Warning pages' yellow "no key"
+       banners. No text-shadow needed at this contrast ratio. */
+    color: rgb(30, 30, 30);
+}
+
+/* ===== Body ===== */
+.prompt-body {
+    padding: 18px 20px 20px;
+}
+
+.prompt-body p {
+    margin: 0 0 12px;
+    line-height: 1.55;
+    color: rgb(220, 220, 220);
+}
+
+.dont-show-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0 18px;
+    font-size: 13px;
+    color: rgb(190, 190, 190);
+    cursor: pointer;
+    user-select: none;
+}
+
+.dont-show-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: rgb(243, 186, 34);
+}
+
+/* ===== Buttons — same palette as OptionsPage.css's .btn family ===== */
+.btn-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 18px;
+    transition: filter 0.15s;
+    white-space: nowrap;
+}
+.btn:hover { filter: brightness(0.85); }
+
+/* Each button sets its own text color against its own background —
+   white reads on the gray Ignore button, black reads better on the
+   yellow Request button (same contrast fix as the banner title). */
+.btn-ignore  { background-color: rgb(110, 110, 110); color: #fff; }
+.btn-request { background-color: rgb(243, 186, 34); color: rgb(30, 30, 30); }

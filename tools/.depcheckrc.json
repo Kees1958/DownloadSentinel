@@ -1,0 +1,9 @@
+{
+  "ignores": [
+    "knip",
+    "depcheck",
+    "madge",
+    "jscpd",
+    "c8"
+  ]
+}

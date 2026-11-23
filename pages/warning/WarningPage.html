@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download Sentinel</title>
+<link rel="stylesheet" href="WarningPage.css">
+</head>
+
+<body>
+
+<div class="top-banner">
+    <div class="logo-box">
+        <img src="../../assets/icons/icon128.png" alt="Download Protection">
+    </div>
+    <div class="banner-title">Download Sentinel</div>
+</div>
+
+<div class="content">
+    <div class="card">
+
+        <h1 id="warningTitle">Download requires your attention!</h1>
+
+        <p class="subtitle" id="warningSubtitle">
+            The file type is either an executable or a compressed archive which could harm your PC
+            when malicious. The download URL and its host have been checked for known threats.
+            Review the results below before opening the file.
+        </p>
+
+        <!-- Basic info -->
+        <div class="info-box">
+            <span class="label">Detected file type</span>
+            <span class="value" id="reasonText">Loading...</span>
+        </div>
+
+        <div class="info-box">
+            <span class="label">Downloaded from</span>
+            <span class="value" id="srcUrl">Loading...</span>
+        </div>
+
+        <!-- Host Reputation summary -->
+        <div class="info-box" id="hostBox" style="display:none;">
+            <span class="label" id="hostLabel">Download URL Reputation</span>
+            <span class="value" id="hostResult">Checking...</span>
+
+        </div>
+
+        <!-- VT details box -->
+        <div class="info-box" id="combinedDetailsBox" style="display:none;">
+            <span class="label">VirusTotal URL Reputation Check</span>
+
+            <!-- VT section -->
+            <div id="vtDetailsSection">
+                <div class="details-section-header" id="vtSectionHeader" style="display:none;">VirusTotal scan URL results</div>
+                <div id="vtEngineCounts" class="vt-engine-counts" style="display:none;"></div>
+                <div id="vtUnknownLine"   style="display:none;" class="details-unknown">Unknown to VirusTotal</div>
+                <ul class="breakdown-list" id="vtDetailsList"></ul>
+                <span class="value details-classification" id="vtClassificationLine" style="display:none;"></span>
+            </div>
+
+            <!-- VT confidence score -->
+            <div id="vtScoreRow" class="score-row">
+                Confidence: <span id="vtScoreValue" class="score-row-value"></span>
+            </div>
+        </div>
+
+        <!-- Heuristics box -->
+        <div class="info-box" id="heuristicsBox" style="display:none;">
+            <span class="label">Download URL Heuristics</span>
+            <ul class="breakdown-list" id="hostDetailsList"></ul>
+            <div id="hostScoreRow" class="score-row">
+                Confidence: <span id="hostConfidenceValue" class="score-row-value"></span>
+            </div>
+        </div>
+
+        <!-- Combined risk score bar -->
+        <div class="info-box" id="worstScoreBox" style="display:none;">
+            <span class="label">Overall Risk Score</span>
+            <div class="score-bar-row">
+                <span class="score-bar-value" id="worstScoreValue">—</span>
+                <div class="score-bar-track">
+                    <div class="score-bar-fill" id="worstScoreBarFill"></div>
+                </div>
+            </div>
+            <div class="score-explanation" id="scoreExplanation"></div>
+        </div>
+
+        <!-- Actions -->
+        <!-- v3.5.4 button scheme (3P Matrix 4.4.6): risk rises left to right —
+             safe (green, keyboard default) · risky (orange); one size for both -->
+        <div class="actions">
+            <button id="btn-vt" class="btn btn-safe" type="button">Check download at VT</button>
+            <button id="btn-ok" class="btn btn-risky" type="button">Proceed anyway</button>
+        </div>
+
+        <p class="disclaimer" id="disclaimerText">
+            <!-- filled dynamically -->
+        </p>
+
+    </div>
+</div>
+
+<!-- Single ES module entry point — WarningPage.js imports its own dependencies -->
+<script src="WarningPage.js" type="module"></script>
+
+</body>
+</html>

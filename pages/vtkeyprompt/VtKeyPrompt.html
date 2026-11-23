@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Get a free VirusTotal API Key</title>
+    <link rel="stylesheet" href="VtKeyPrompt.css">
+</head>
+
+<body>
+
+<div class="prompt-card">
+
+    <div class="banner">
+        <img class="logo" src="../../assets/icons/icon128.png" alt="Sentinel Logo">
+        <span class="banner-text">Get a free VirusTotal API Key</span>
+    </div>
+
+    <div class="prompt-body">
+        <p>
+            Download Sentinel can check every download against <strong>70+ antivirus engines</strong> —
+            but only once you've added a free VirusTotal API key. Without one, downloads are still
+            screened by the built-in heuristics and DNS threat-intel checks, just not by VirusTotal.
+        </p>
+        <p>
+            Joining VirusTotal, getting your free API-key and copying it into the OPTIONS only takes a minute and costs nothing.
+        </p>
+
+        <label class="dont-show-row">
+            <input type="checkbox" id="dontShowAgain">
+            <span>I understand — don't show this warning again</span>
+        </label>
+
+        <div class="btn-row">
+            <button id="ignoreBtn" class="btn btn-ignore">Ignore</button>
+            <button id="requestBtn" class="btn btn-request">Request</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Single ES module entry point — VtKeyPrompt.js imports its own dependencies -->
+<script src="VtKeyPrompt.js" type="module"></script>
+
+</body>
+</html>

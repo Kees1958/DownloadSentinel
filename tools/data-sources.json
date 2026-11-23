@@ -1,0 +1,111 @@
+{
+  "$schema-note": "v3.2.0 (3P Matrix alignment §5) — a register of every external data source this project's build-time tooling ingests, in one place. Read by tools/check-list-freshness.mjs; maintained by hand alongside the update script each entry names (adding a new source: add it here too). 'updateOn' (v3.3.0, item 19) is an optional cadence label distinct from the generic 'updateFrequencyNote' prose: 'minor' means this project intends to re-fetch it once per minor release (a list that changes slowly enough that the generic ~180-day staleness warning would otherwise under-prompt a refresh); omitted means the default 'per release' cadence applies.",
+  "sources": [
+    {
+      "name": "HaGeZi DynDNS",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/dyndns-onlydomains.txt",
+      "repo": "https://github.com/hagezi/dns-blocklists",
+      "license": "GPL-3.0 — confirmed 2026-10-21 against the repository's own \"Redistribution and licensing\" disclaimer; license text accompanies this redistribution at THIRD_PARTY_LICENSES/GPL-3.0.txt. See THIRD_PARTY_NOTICES.md for the full disclaimer text and the one still-open scope question.",
+      "rawFile": "lists-raw/hagezi-dyndns.txt",
+      "updateScript": "update-lists.mjs",
+      "feeds": [
+        "data/HostList.json"
+      ],
+      "updateFrequencyNote": "HaGeZi publishes this list on an ongoing basis (hours-scale); this project re-fetches it per release, not continuously.",
+      "builtFromSnapshot": "sha256:b46176ca8479"
+    },
+    {
+      "name": "HaGeZi Badware Hoster",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/hoster-onlydomains.txt",
+      "repo": "https://github.com/hagezi/dns-blocklists",
+      "license": "GPL-3.0 — confirmed 2026-10-21 against the repository's own \"Redistribution and licensing\" disclaimer; license text accompanies this redistribution at THIRD_PARTY_LICENSES/GPL-3.0.txt. See THIRD_PARTY_NOTICES.md for the full disclaimer text and the one still-open scope question.",
+      "rawFile": "lists-raw/hagezi-hoster.txt",
+      "updateScript": "update-lists.mjs",
+      "feeds": [
+        "data/HostList.json"
+      ],
+      "updateFrequencyNote": "Same cadence as HaGeZi DynDNS above.",
+      "builtFromSnapshot": "sha256:d33034980811"
+    },
+    {
+      "name": "Kees1958 Suspicious websites",
+      "url": "https://raw.githubusercontent.com/Kees1958/W3C_annual_most_used_survey_blocklist/refs/heads/master/Suspicious%20websites.txt",
+      "repo": "https://github.com/Kees1958/W3C_annual_most_used_survey_blocklist",
+      "license": "no LICENSE file found (confirmed 2026-10-21) — same author/account as this project, not a genuine third-party source, but the source repo itself still has no license on file",
+      "rawFile": "lists-raw/kees-suspicious.txt",
+      "updateScript": "update-lists.mjs",
+      "feeds": [
+        "data/HostList.json"
+      ],
+      "updateFrequencyNote": "Irregular/maintainer-driven; no published cadence — re-fetch per release.",
+      "builtFromSnapshot": "sha256:f1538500617e"
+    },
+    {
+      "name": "Public Suffix List",
+      "url": "https://raw.githubusercontent.com/publicsuffix/list/master/public_suffix_list.dat",
+      "repo": "https://github.com/publicsuffix/list",
+      "license": "MPL-2.0",
+      "rawFile": "lists-raw/public_suffix_list.dat",
+      "updateScript": "update-psl.mjs",
+      "feeds": [
+        "data/PublicSuffixList.json"
+      ],
+      "updateFrequencyNote": "Changes as TLDs/registries change — infrequent but ongoing; re-fetch per release.",
+      "builtFromSnapshot": "sha256:d3e6243b5169"
+    },
+    {
+      "name": "Chrome UX Report (CrUX) top sites",
+      "url": "https://raw.githubusercontent.com/zakird/crux-top-lists/main/data/global/current.csv.gz",
+      "repo": "https://github.com/zakird/crux-top-lists",
+      "license": "see repository LICENSE — not re-asserted here, verify before redistribution; underlying traffic data is Google's CrUX dataset (ODbL)",
+      "rawFile": "lists-raw/crux-top-sites.csv.gz",
+      "updateScript": "build-top-sites-filter.mjs",
+      "feeds": [
+        "data/TopSitesFilter.json"
+      ],
+      "updateFrequencyNote": "CrUX refreshes monthly; this project's cached snapshot is re-fetched per release, not automatically.",
+      "builtFromSnapshot": "sha256:be444a341be6"
+    },
+    {
+      "name": "Brands / regional brand table",
+      "url": null,
+      "repo": null,
+      "license": "n/a — hand-transcribed/curated by this project, not an external fetched source",
+      "rawFile": null,
+      "updateScript": "gen-brands-data.mjs",
+      "feeds": [
+        "data/Brands.json",
+        "data/GovSuffixes.json"
+      ],
+      "updateFrequencyNote": "No fetch/cache cycle — the keyword/domain tables are hardcoded inside gen-brands-data.mjs itself (transcribed once from the 3P Matrix DESIGN doc's regional brand table, v3.2.0). To add/change a brand: edit that script's tables, then re-run it."
+    },
+    {
+      "name": "Public Suffix List — PRIVATE section (hosting-platform suffixes)",
+      "url": "https://raw.githubusercontent.com/publicsuffix/list/master/public_suffix_list.dat",
+      "repo": "https://github.com/publicsuffix/list",
+      "license": "MPL-2.0",
+      "rawFile": "lists-raw/public_suffix_list.dat",
+      "updateScript": "update-domain-age-lists.mjs",
+      "feeds": [
+        "data/PlatformSuffixes.json"
+      ],
+      "updateOn": "minor",
+      "updateFrequencyNote": "v3.3.0 (3P Matrix alignment item 1) — util/DomainAge.js's platform-subdomain skip list. Shares its raw cached file with the 'Public Suffix List' entry above (refreshed by tools/update-psl.mjs --fetch); this entry's own updateScript only re-extracts the PRIVATE DOMAINS section into its own JSON, it does not re-fetch. New hosting platforms are added to the PSL at most a few times a month — refreshing once per minor release is ample.",
+      "builtFromSnapshot": "sha256:d3e6243b5169"
+    },
+    {
+      "name": "IANA RDAP bootstrap registry (ccTLDs with RDAP service)",
+      "url": "https://data.iana.org/rdap/dns.json",
+      "repo": null,
+      "license": "n/a — IANA public registry data, not a licensed redistribution",
+      "rawFile": "lists-raw/iana-rdap-dns.json",
+      "updateScript": "update-domain-age-lists.mjs",
+      "feeds": [
+        "data/RdapCctlds.json"
+      ],
+      "updateOn": "minor",
+      "updateFrequencyNote": "v3.3.0 (3P Matrix alignment item 1) — util/DomainAge.js's not-applicable ccTLD list (RdapProtection.js skips the lookup for a ccTLD not in this list, rather than attempting it and scoring the inevitable failure). A registry adopting RDAP is a rare, deliberate event — minor-release cadence is ample; this is not something that needs the 180-day generic staleness warning to catch early.",
+      "builtFromSnapshot": "sha256:1d731769a3bd"
+    }
+  ]
+}

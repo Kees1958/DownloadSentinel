@@ -1,0 +1,297 @@
+[
+  {
+    "host": "raw.githubusercontent.com",
+    "score": -10,
+    "exact": true
+  },
+  {
+    "host": "release-assets.githubusercontent.com",
+    "score": -10,
+    "exact": true
+  },
+  {
+    "host": "codeload.github.com",
+    "score": -10,
+    "exact": true
+  },
+  {
+    "host": "objects.githubusercontent.com",
+    "score": -10,
+    "exact": true
+  },
+  {
+    "host": "media.githubusercontent.com",
+    "score": -10,
+    "exact": true
+  },
+  {
+    "host": "gitlab.com",
+    "score": -15,
+    "exact": false
+  },
+  {
+    "host": "bitbucket.org",
+    "score": -15,
+    "exact": false
+  },
+  {
+    "host": "codeberg.org",
+    "score": -15,
+    "exact": false
+  },
+  {
+    "host": "sourceforge.net",
+    "score": -25,
+    "exact": false
+  },
+  {
+    "host": "downloads.sourceforge.net",
+    "score": -25,
+    "exact": true
+  },
+  {
+    "host": "sourceforge.io",
+    "score": -25,
+    "exact": false
+  },
+  {
+    "host": "cdn.discordapp.com",
+    "score": -20,
+    "exact": true
+  },
+  {
+    "host": "media.discordapp.net",
+    "score": -20,
+    "exact": true
+  },
+  {
+    "host": "attachments.discord.com",
+    "score": -20,
+    "exact": true
+  },
+  {
+    "host": "dl.dropboxusercontent.com",
+    "score": -15,
+    "exact": true
+  },
+  {
+    "host": "dl.dropbox.com",
+    "score": -15,
+    "exact": true
+  },
+  {
+    "host": "mega.nz",
+    "score": -45,
+    "exact": false
+  },
+  {
+    "host": "mega.co.nz",
+    "score": -45,
+    "exact": false
+  },
+  {
+    "host": "mediafire.com",
+    "score": -40,
+    "exact": false
+  },
+  {
+    "host": "download1.mediafire.com",
+    "score": -40,
+    "exact": true
+  },
+  {
+    "host": "4shared.com",
+    "score": -40,
+    "exact": false
+  },
+  {
+    "host": "sendspace.com",
+    "score": -40,
+    "exact": false
+  },
+  {
+    "host": "gofile.io",
+    "score": -45,
+    "exact": false
+  },
+  {
+    "host": "transfer.sh",
+    "score": -40,
+    "exact": false
+  },
+  {
+    "host": "ufile.io",
+    "score": -45,
+    "exact": false
+  },
+  {
+    "host": "bayfiles.com",
+    "score": -55,
+    "exact": false
+  },
+  {
+    "host": "anonfiles.com",
+    "score": -65,
+    "exact": false
+  },
+  {
+    "host": "anonfile.com",
+    "score": -65,
+    "exact": false
+  },
+  {
+    "host": "anonymousfiles.io",
+    "score": -65,
+    "exact": false
+  },
+  {
+    "host": "pastebin.com",
+    "score": -35,
+    "exact": false
+  },
+  {
+    "host": "paste.ee",
+    "score": -35,
+    "exact": false
+  },
+  {
+    "host": "hastebin.com",
+    "score": -35,
+    "exact": false
+  },
+  {
+    "host": "ghostbin.co",
+    "score": -35,
+    "exact": false
+  },
+  {
+    "host": "controlc.com",
+    "score": -35,
+    "exact": false
+  },
+  {
+    "host": "rentry.co",
+    "score": -35,
+    "exact": false
+  },
+  {
+    "host": "nexusmods.com",
+    "score": -15,
+    "exact": false
+  },
+  {
+    "host": "staticdelivery.nexusmods.com",
+    "score": -15,
+    "exact": true
+  },
+  {
+    "host": "unknowncheats.me",
+    "score": -70,
+    "exact": false
+  },
+  {
+    "host": "mpgh.net",
+    "score": -70,
+    "exact": false
+  },
+  {
+    "host": "hackforums.net",
+    "score": -70,
+    "exact": false
+  },
+  {
+    "host": "elitepvpers.com",
+    "score": -70,
+    "exact": false
+  },
+  {
+    "host": "ownedcore.com",
+    "score": -70,
+    "exact": false
+  },
+  {
+    "host": "forums.sythe.org",
+    "score": -70,
+    "exact": true
+  },
+  {
+    "host": "cheatengine.org",
+    "score": -65,
+    "exact": false
+  },
+  {
+    "host": "v3rmillion.net",
+    "score": -80,
+    "exact": false
+  },
+  {
+    "host": "wearedevs.net",
+    "score": -80,
+    "exact": false
+  },
+  {
+    "host": "nulled.to",
+    "score": -75,
+    "exact": false
+  },
+  {
+    "host": "nulled.cc",
+    "score": -75,
+    "exact": false
+  },
+  {
+    "host": "cracked.io",
+    "score": -75,
+    "exact": false
+  },
+  {
+    "host": "leakforums.net",
+    "score": -75,
+    "exact": false
+  },
+  {
+    "host": "getintopc.com",
+    "score": -55,
+    "exact": false
+  },
+  {
+    "host": "crackedpc.com",
+    "score": -75,
+    "exact": false
+  },
+  {
+    "host": "emuparadise.me",
+    "score": -45,
+    "exact": false
+  },
+  {
+    "host": "romsmania.cc",
+    "score": -45,
+    "exact": false
+  },
+  {
+    "host": "romspure.cc",
+    "score": -45,
+    "exact": false
+  },
+  {
+    "host": "wowroms.com",
+    "score": -45,
+    "exact": false
+  },
+  {
+    "host": "download.cnet.com",
+    "score": -35,
+    "exact": true
+  },
+  {
+    "host": "softonic.com",
+    "score": -35,
+    "exact": false
+  },
+  {
+    "host": "filehippo.com",
+    "score": -25,
+    "exact": false
+  }
+]

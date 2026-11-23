@@ -1,0 +1,813 @@
+{
+  "_comment": "Download Sentinel false-positive sweep corpus (heuristics plan Step 0, v2.7.0). knownGood: real, legitimate download URLs that must never score Probably Suspicious or worse. stagingSynthetic: invented subdomains on real DDNS/spammy-TLD suffixes, no live malware — reference points for Step 2 (v2.8.0) staging-signal work, not yet expected to be flagged as suspicious in v2.7.0 (no new detection added this step). Each entry's quad9/rdap are mocked per-entry (see tools/fp-sweep.mjs) so this sweep runs fully offline.",
+  "knownGood": [
+    {
+      "url": "https://go.microsoft.com/fwlink/?linkid=2203531",
+      "filename": "WindowsUpdate.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 5242880,
+      "note": "Microsoft Windows Update standalone installer"
+    },
+    {
+      "url": "https://dl.google.com/chrome/install/ChromeSetup.exe",
+      "filename": "ChromeSetup.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 1500000,
+      "note": "Google Chrome installer"
+    },
+    {
+      "url": "https://dl.google.com/android/studio/install/2024.1.1.1/android-studio-2024.1.1.1-windows.exe",
+      "filename": "android-studio-2024.1.1.1-windows.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 1200000000,
+      "note": "Android Studio installer"
+    },
+    {
+      "url": "https://download.mozilla.org/?product=firefox-latest&os=win64",
+      "filename": "Firefox Installer.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 500000,
+      "note": "Firefox installer"
+    },
+    {
+      "url": "https://ardownload2.adobe.com/pub/adobe/reader/win/AcroRdrDC2400120432_en_US.exe",
+      "filename": "AcroRdrDC2400120432_en_US.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 150000000,
+      "note": "Adobe Acrobat Reader installer"
+    },
+    {
+      "url": "https://zoom.us/client/latest/ZoomInstaller.exe",
+      "filename": "ZoomInstaller.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 30000000,
+      "note": "Zoom client installer"
+    },
+    {
+      "url": "https://slack.com/downloads/instructions/windows?build=x64",
+      "filename": "SlackSetup.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 100000000,
+      "note": "Slack desktop installer"
+    },
+    {
+      "url": "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe",
+      "filename": "Docker Desktop Installer.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 600000000,
+      "note": "Docker Desktop installer"
+    },
+    {
+      "url": "https://nodejs.org/dist/v22.11.0/node-v22.11.0-x64.msi",
+      "filename": "node-v22.11.0-x64.msi",
+      "mime": "application/x-msi",
+      "totalBytes": 30000000,
+      "note": "Node.js MSI installer"
+    },
+    {
+      "url": "https://www.python.org/ftp/python/3.13.0/python-3.13.0-amd64.exe",
+      "filename": "python-3.13.0-amd64.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 27000000,
+      "note": "Python.org installer"
+    },
+    {
+      "url": "https://update.code.visualstudio.com/latest/win32-x64/stable",
+      "filename": "VSCodeSetup-x64.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 90000000,
+      "note": "VS Code installer"
+    },
+    {
+      "url": "https://github.com/git-for-windows/git/releases/download/v2.47.0.windows.1/Git-2.47.0-64-bit.exe",
+      "filename": "Git-2.47.0-64-bit.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 50000000,
+      "note": "Git for Windows release asset (github.com)"
+    },
+    {
+      "url": "https://objects.githubusercontent.com/github-production-release-asset-2e65be/1234567/abcdef",
+      "originalUrl": "https://github.com/microsoft/vscode/releases/download/1.94.0/VSCode-win32-x64.zip",
+      "filename": "VSCode-win32-x64.zip",
+      "mime": "application/zip",
+      "totalBytes": 95000000,
+      "note": "GitHub release redirect to objects.githubusercontent.com"
+    },
+    {
+      "url": "https://codeload.github.com/nodejs/node/zip/refs/heads/main",
+      "filename": "node-main.zip",
+      "mime": "application/zip",
+      "totalBytes": 60000000,
+      "note": "GitHub codeload archive"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh",
+      "filename": "install.sh",
+      "mime": "text/plain",
+      "totalBytes": 15000,
+      "note": "nvm install script (raw.githubusercontent.com)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh",
+      "filename": "install.sh",
+      "mime": "text/plain",
+      "totalBytes": 12000,
+      "note": "oh-my-zsh install script"
+    },
+    {
+      "url": "https://sh.rustup.rs",
+      "originalUrl": "https://sh.rustup.rs",
+      "filename": "rustup-init.sh",
+      "mime": "text/plain",
+      "totalBytes": 18000,
+      "note": "rustup install script"
+    },
+    {
+      "url": "https://ohmyz.sh/install",
+      "filename": "install.sh",
+      "mime": "text/plain",
+      "totalBytes": 11000,
+      "note": "oh-my-zsh vanity install URL"
+    },
+    {
+      "url": "https://astral.sh/uv/install.sh",
+      "filename": "install.sh",
+      "mime": "text/plain",
+      "totalBytes": 9000,
+      "note": "uv (Python tool) install script"
+    },
+    {
+      "url": "https://get.docker.com",
+      "filename": "install.sh",
+      "mime": "text/plain",
+      "totalBytes": 20000,
+      "note": "Docker convenience install script"
+    },
+    {
+      "url": "https://releases.ubuntu.com/24.04/ubuntu-24.04.1-desktop-amd64.iso",
+      "filename": "ubuntu-24.04.1-desktop-amd64.iso",
+      "mime": "application/x-iso9660-image",
+      "totalBytes": 6114000000,
+      "note": "Ubuntu desktop ISO (large, real OS image)"
+    },
+    {
+      "url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.7.0-amd64-netinst.iso",
+      "filename": "debian-12.7.0-amd64-netinst.iso",
+      "mime": "application/x-iso9660-image",
+      "totalBytes": 658000000,
+      "note": "Debian netinst ISO"
+    },
+    {
+      "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/41/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-41-1.4.iso",
+      "filename": "Fedora-Workstation-Live-x86_64-41-1.4.iso",
+      "mime": "application/x-iso9660-image",
+      "totalBytes": 2400000000,
+      "note": "Fedora Workstation Live ISO"
+    },
+    {
+      "url": "https://files.pythonhosted.org/packages/ab/cd/requests-2.32.3-py3-none-any.whl",
+      "filename": "requests-2.32.3-py3-none-any.whl",
+      "mime": "application/zip",
+      "totalBytes": 64000,
+      "note": "PyPI wheel package"
+    },
+    {
+      "url": "https://registry.npmjs.org/left-pad/-/left-pad-1.3.0.tgz",
+      "filename": "left-pad-1.3.0.tgz",
+      "mime": "application/gzip",
+      "totalBytes": 2000,
+      "note": "npm tarball"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/vue@3.5.12/dist/vue.global.js",
+      "filename": "vue.global.js",
+      "mime": "application/javascript",
+      "totalBytes": 400000,
+      "note": "jsDelivr-hosted library file",
+      "acceptedRisk": true,
+      "acceptedReason": "v3.5.0, decided by the owner 2026-10-24: keep warning. cdn.jsdelivr.net is on SuspiciousDomains (abused public CDN, −24) and a raw .js counts as a script (−25) → −37; jsdelivr stays on the list."
+    },
+    {
+      "url": "https://dbeaver.io/files/dbeaver-ce-latest-x86_64-setup.exe",
+      "filename": "dbeaver-ce-latest-x86_64-setup.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 150000000,
+      "note": "DBeaver installer"
+    },
+    {
+      "url": "https://download.jetbrains.com/idea/ideaIC-2024.3.exe",
+      "filename": "ideaIC-2024.3.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 900000000,
+      "note": "JetBrains IntelliJ IDEA installer"
+    },
+    {
+      "url": "https://downloads.sourceforge.net/project/sevenzip/7-Zip/23.01/7z2301-x64.exe",
+      "filename": "7z2301-x64.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 1600000,
+      "note": "7-Zip on SourceForge (known mild RiskyHosting -35, expected not a regression)"
+    },
+    {
+      "url": "https://dl.dropboxusercontent.com/s/abc123/project-report.pdf.zip",
+      "filename": "project-report.pdf.zip",
+      "mime": "application/zip",
+      "totalBytes": 2000000,
+      "note": "Dropbox direct-download archive (double-extension-looking but .pdf.zip is a real compound, not a dangerous final ext)"
+    },
+    {
+      "url": "https://dl.dropbox.com/s/xyz987/presentation.pptx",
+      "filename": "presentation.pptx",
+      "mime": "application/vnd.openxmlformats",
+      "totalBytes": 8000000,
+      "note": "Dropbox direct link, office doc (not monitored ext — sanity check it's correctly ignored)"
+    },
+    {
+      "url": "https://www.virtualbox.org/download/7.1.4/VirtualBox-7.1.4-164913-Win.exe",
+      "filename": "VirtualBox-7.1.4-164913-Win.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 110000000,
+      "note": "VirtualBox installer"
+    },
+    {
+      "url": "https://download.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe",
+      "filename": "vlc-3.0.21-win64.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 45000000,
+      "note": "VLC installer"
+    },
+    {
+      "url": "https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/PowerShell-7.4.6-win-x64.msi",
+      "filename": "PowerShell-7.4.6-win-x64.msi",
+      "mime": "application/x-msi",
+      "totalBytes": 100000000,
+      "note": "PowerShell MSI on GitHub release — must not trigger LOLBIN_NAME in a future staging check (filename only)"
+    },
+    {
+      "url": "https://dl.bintray.com/anaconda-main/Anaconda3-2024.10-1-Windows-x86_64.exe",
+      "filename": "Anaconda3-2024.10-1-Windows-x86_64.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 900000000,
+      "note": "Anaconda installer"
+    },
+    {
+      "url": "https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh",
+      "filename": "Anaconda3-2024.10-1-Linux-x86_64.sh",
+      "mime": "text/plain",
+      "totalBytes": 950000000,
+      "note": "Anaconda Linux installer shell script"
+    },
+    {
+      "url": "https://d2lang.com/tour/install.sh",
+      "filename": "install.sh",
+      "mime": "text/plain",
+      "totalBytes": 8000,
+      "note": "d2lang install script"
+    },
+    {
+      "url": "https://sdk.cloud.google.com",
+      "filename": "install.sh",
+      "mime": "text/plain",
+      "totalBytes": 7000,
+      "note": "Google Cloud SDK install script (dl.google.com-style vanity domain)"
+    },
+    {
+      "url": "https://releases.hashicorp.com/terraform/1.9.8/terraform_1.9.8_windows_amd64.zip",
+      "filename": "terraform_1.9.8_windows_amd64.zip",
+      "mime": "application/zip",
+      "totalBytes": 30000000,
+      "note": "HashiCorp Terraform release"
+    },
+    {
+      "url": "https://golang.org/dl/go1.23.3.windows-amd64.msi",
+      "filename": "go1.23.3.windows-amd64.msi",
+      "mime": "application/x-msi",
+      "totalBytes": 70000000,
+      "note": "Go toolchain installer"
+    },
+    {
+      "url": "https://ftp.gnu.org/gnu/wget/wget-1.24.5.tar.gz",
+      "filename": "wget-1.24.5.tar.gz",
+      "mime": "application/gzip",
+      "totalBytes": 5000000,
+      "note": "GNU FTP tarball"
+    },
+    {
+      "url": "https://ftp.openbsd.org/pub/OpenBSD/7.6/amd64/install76.iso",
+      "filename": "install76.iso",
+      "mime": "application/x-iso9660-image",
+      "totalBytes": 700000000,
+      "note": "OpenBSD install ISO"
+    },
+    {
+      "url": "https://download.libreoffice.org/libreoffice/stable/24.8.3/win/x86_64/LibreOffice_24.8.3_Win_x86-64.msi",
+      "filename": "LibreOffice_24.8.3_Win_x86-64.msi",
+      "mime": "application/x-msi",
+      "totalBytes": 400000000,
+      "note": "LibreOffice installer"
+    },
+    {
+      "url": "https://cran.r-project.org/bin/windows/base/R-4.4.2-win.exe",
+      "filename": "R-4.4.2-win.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 90000000,
+      "note": "R language installer (CRAN)"
+    },
+    {
+      "url": "https://download.docker.com/linux/debian/dists/bookworm/pool/stable/amd64/docker-ce_27.3.1-1_amd64.deb",
+      "filename": "docker-ce_27.3.1-1_amd64.deb",
+      "mime": "application/vnd.debian.binary-package",
+      "totalBytes": 30000000,
+      "note": "Docker CE .deb package"
+    },
+    {
+      "url": "https://cachefly.cdn.unrealengine.com/Builds/UnrealEngine-5.4.4/UnrealEngine-5.4.4.exe",
+      "filename": "UnrealEngine-5.4.4.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 200000000,
+      "note": "Unreal Engine installer via CDN"
+    },
+    {
+      "url": "https://aka.ms/vs/17/release/vs_community.exe",
+      "filename": "vs_community.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 4000000,
+      "note": "Visual Studio bootstrapper via aka.ms short link"
+    },
+    {
+      "url": "https://releases.hugo.io/hugo_extended_0.136.5_windows-amd64.zip",
+      "filename": "hugo_extended_0.136.5_windows-amd64.zip",
+      "mime": "application/zip",
+      "totalBytes": 15000000,
+      "note": "Hugo static-site-generator release"
+    },
+    {
+      "url": "https://download.blender.org/release/Blender4.2/blender-4.2.3-windows-x64.msi",
+      "filename": "blender-4.2.3-windows-x64.msi",
+      "mime": "application/x-msi",
+      "totalBytes": 300000000,
+      "note": "Blender installer"
+    },
+    {
+      "url": "https://www.gimp.org/downloads/gimp-2.10.38-setup.exe",
+      "filename": "gimp-2.10.38-setup.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 250000000,
+      "note": "GIMP installer"
+    },
+    {
+      "url": "https://nodejs.org/dist/v22.11.0/node-v22.11.0-linux-x64.tar.xz",
+      "filename": "node-v22.11.0-linux-x64.tar.xz",
+      "mime": "application/x-xz",
+      "totalBytes": 30000000,
+      "note": "Node.js tar.xz binary"
+    },
+    {
+      "url": "https://download.sublimetext.com/sublime_text_build_4169_x64_setup.exe",
+      "filename": "sublime_text_build_4169_x64_setup.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 18000000,
+      "note": "Sublime Text installer"
+    },
+    {
+      "url": "https://www.amazon.com/clouddrive/downloads/AmazonPhotosSetup.exe",
+      "filename": "AmazonPhotosSetup.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 42000000,
+      "note": "v2.11.0 brand-homoglyph sweep anchor — real amazon.com apex domain, executable so evaluateHostReputation actually runs; must never be flagged as a homoglyph of itself"
+    },
+    {
+      "url": "https://www.paypal.com/myaccount/transfer/PayPalAppSetup.exe",
+      "filename": "PayPalAppSetup.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 38000000,
+      "note": "v2.11.0 brand-homoglyph sweep anchor — real paypal.com apex domain, executable so evaluateHostReputation actually runs"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/software-download/windows11.iso",
+      "filename": "windows11.iso",
+      "mime": "application/x-iso9660-image",
+      "totalBytes": 5500000000,
+      "note": "v2.11.0 brand-homoglyph sweep anchor — real microsoft.com apex domain (distinct from the existing go.microsoft.com/dl.google.com subdomain entries above)"
+    },
+    {
+      "url": "https://www.apple.com/itunes/download/win64",
+      "filename": "iTunesSetup64.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 180000000,
+      "note": "v2.11.0 brand-homoglyph sweep anchor — real apple.com apex domain"
+    }
+  ],
+  "stagingSynthetic": [
+    {
+      "url": "https://invoice-portal.duckdns.org/Remittance_Advice.iso",
+      "filename": "Remittance_Advice.iso",
+      "mime": "application/x-iso9660-image",
+      "totalBytes": 2100000,
+      "note": "synthetic — finance lure + small ISO on dyndns.org, no live payload"
+    },
+    {
+      "url": "https://secure-update.hopto.org/update.hta",
+      "filename": "update.hta",
+      "mime": "text/html",
+      "totalBytes": 5000,
+      "note": "synthetic — fake-update lure + .hta on dyndns host"
+    },
+    {
+      "url": "https://tracking-dhl.sytes.net/Shipment_Tracking.one",
+      "filename": "Shipment_Tracking.one",
+      "mime": "application/onenote",
+      "totalBytes": 30000,
+      "note": "synthetic — delivery lure + staging format on dyndns host"
+    },
+    {
+      "url": "https://cdn-docs.examplefiles.top/remit/Remittance_Advice_0923.iso",
+      "filename": "Remittance_Advice_0923.iso",
+      "mime": "application/x-iso9660-image",
+      "totalBytes": 2200000,
+      "note": "synthetic — plan's own Step 3 worked example staging chain, no live payload"
+    },
+    {
+      "url": "https://files.myfirewall.org/invoice.zip.url",
+      "filename": "invoice.zip.url",
+      "mime": "text/plain",
+      "totalBytes": 300,
+      "note": "synthetic — finance lure + .url shortcut on dyndns host"
+    },
+    {
+      "url": "https://portal-login.mooo.com/secure-document.settingcontent-ms",
+      "filename": "secure-document.settingcontent-ms",
+      "mime": "application/octet-stream",
+      "totalBytes": 2000,
+      "note": "synthetic — document lure + settingcontent-ms staging format"
+    },
+    {
+      "url": "https://update-required.shop/chrome-update.hta",
+      "filename": "chrome-update.hta",
+      "mime": "text/html",
+      "totalBytes": 4000,
+      "note": "synthetic — fake-update lure on abused .shop TLD"
+    },
+    {
+      "url": "https://keygen-crack.top/activator.exe",
+      "filename": "activator.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 900000,
+      "note": "synthetic — piracy lure on abused .top TLD"
+    },
+    {
+      "url": "https://overdue-payment.zip/statement.exe",
+      "filename": "statement.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 700000,
+      "note": "synthetic — finance lure on .zip TLD (filename-lookalike trick)"
+    },
+    {
+      "url": "https://aimbot-injector.click/wallhack.exe",
+      "filename": "wallhack.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 500000,
+      "note": "synthetic — game-cheat lure on abused .click TLD"
+    },
+    {
+      "url": "https://free-robux-generator.cfd/spoofer.exe",
+      "filename": "spoofer.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 450000,
+      "note": "synthetic — game-cheat lure on abused .cfd TLD"
+    },
+    {
+      "url": "https://waybill-customs.serveftp.com/tracking.iqy",
+      "filename": "tracking.iqy",
+      "mime": "text/plain",
+      "totalBytes": 400,
+      "note": "synthetic — delivery lure + Excel web-query staging format on dyndns host"
+    },
+    {
+      "url": "https://fax-voicemail.zapto.org/voicemail-fax.appx",
+      "filename": "voicemail-fax.appx",
+      "mime": "application/octet-stream",
+      "totalBytes": 40000,
+      "note": "synthetic — document lure + ClickOnce-style staging format on dyndns host"
+    },
+    {
+      "url": "https://final-notice-action-required.online/past-due-statement.iso",
+      "filename": "past-due-statement.iso",
+      "mime": "application/x-iso9660-image",
+      "totalBytes": 1900000,
+      "note": "synthetic — urgency+finance lure + small ISO on abused .online TLD"
+    },
+    {
+      "url": "https://nulled-warez.icu/full-version-activator.exe",
+      "filename": "full-version-activator.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 850000,
+      "note": "synthetic — piracy lure on abused .icu TLD"
+    },
+    {
+      "url": "https://secure-esignature.servehttp.com/document.library-ms",
+      "filename": "document.library-ms",
+      "mime": "application/octet-stream",
+      "totalBytes": 1500,
+      "note": "synthetic — e-signature lure + library-ms staging format on dyndns host"
+    },
+    {
+      "url": "https://123freehost.co.uk/scan-document.xll",
+      "filename": "scan-document.xll",
+      "mime": "application/octet-stream",
+      "totalBytes": 60000,
+      "note": "synthetic — document lure + Excel add-in staging format on HaGeZi-hoster-listed free host"
+    },
+    {
+      "url": "https://flow.page/receipt-payment-refund.exe",
+      "filename": "receipt-payment-refund.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 600000,
+      "note": "synthetic — finance lure on Kees-listed free-hosting platform"
+    },
+    {
+      "url": "https://000webhostapp.com/purchase-order-quotation.exe",
+      "filename": "purchase-order-quotation.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 550000,
+      "note": "synthetic — finance lure on Kees-listed free-hosting platform"
+    },
+    {
+      "url": "https://mywire.org/customs-waybill-tracking.diagcab",
+      "filename": "customs-waybill-tracking.diagcab",
+      "mime": "application/octet-stream",
+      "totalBytes": 2500,
+      "note": "synthetic — delivery lure + diagcab staging format on dyndns host"
+    },
+    {
+      "url": "https://invoice-portal.duckdns.org/invoice.exe",
+      "filename": "invoice‮gpj.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 45000,
+      "note": "v2.11.0 synthetic — RLO (U+202E) filename disguise, no live payload"
+    },
+    {
+      "url": "https://free-software.hopto.org/Invoice_PDF_download.exe",
+      "filename": "Invoice_PDF____________________.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 61000,
+      "note": "v2.11.0 synthetic — padded double extension (decoy PDF pushed off-screen by underscores), no live payload"
+    },
+    {
+      "url": "https://arnazon.com/order/confirm-payment.exe",
+      "filename": "confirm-payment.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 72000,
+      "note": "v2.11.0 synthetic — bigram homoglyph typosquat of amazon.com (rn→m), no live payload"
+    },
+    {
+      "url": "https://bit.ly/3xFakeInvoice",
+      "filename": "invoice_overdue.exe",
+      "mime": "application/x-msdownload",
+      "totalBytes": 58000,
+      "note": "v2.11.0 synthetic — URL shortener + finance lure filename, no live payload (shortener signal alone is deliberately weak)"
+    }
+  ],
+  "_flows_comment": "v3.5.0 — complete download journeys (referrer, redirect, domain age, extension hidden at start) that the single-URL entries above cannot express. expect 'quiet' = legit: must score below Probably Suspicious at FP level Medium and High, and never Probably Malicious at Low (None is listed only: it counts everything in full and doubles it). expect 'flag' = attack: must reach Probably Suspicious or worse (or be always-warned, R1) at Medium, Low and None. Scored with VirusTotal unknown (no key / fresh URL). URLs are realistic shapes; nothing is fetched.",
+  "flows": [
+    {
+      "id": "L01-ccleaner-cdn",
+      "story": "CCleaner download page → Gen Digital CDN, extensionless link, name via Content-Disposition (the 2026-10-24 screenshot)",
+      "referrer": "https://www.ccleaner.com/ccleaner/download",
+      "url": "https://bits.avcdn.net/productfamily_CCLEANER7/insttype_FREE/platform_WIN/installertype_ONLINE/build_RELEASE/cookie_mmm_ccl_oth_999_008_m",
+      "filename": "ccsetup.exe",
+      "mime": "application/octet-stream",
+      "hiddenExt": true,
+      "expect": "quiet"
+    },
+    {
+      "id": "L02-avast-cdn",
+      "story": "Avast free AV page → same CDN, extensionless",
+      "referrer": "https://www.avast.com/nl-nl/free-antivirus-download",
+      "url": "https://bits.avcdn.net/productfamily_ANTIVIRUS/insttype_FREE/platform_WIN/installertype_ONLINE/build_RELEASE",
+      "filename": "avast_free_antivirus_setup_online.exe",
+      "mime": "application/octet-stream",
+      "hiddenExt": true,
+      "expect": "quiet"
+    },
+    {
+      "id": "L03-firefox",
+      "story": "mozilla.org → download.mozilla.org redirect → cdn.mozilla.net",
+      "referrer": "https://www.mozilla.org/nl/firefox/new/",
+      "originalUrl": "https://download.mozilla.org/?product=firefox-stub&os=win&lang=nl",
+      "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/131.0.3/win32/nl/Firefox%20Installer.exe",
+      "filename": "Firefox Installer.exe",
+      "mime": "application/x-msdownload",
+      "expect": "quiet"
+    },
+    {
+      "id": "L04-vscode",
+      "story": "code.visualstudio.com → Microsoft download CDN",
+      "referrer": "https://code.visualstudio.com/download",
+      "originalUrl": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user",
+      "url": "https://vscode.download.prss.microsoft.com/dbazure/download/stable/384ff7382de624fb94dbaf6da11977bba1ecd427/VSCodeUserSetup-x64-1.94.2.exe",
+      "filename": "VSCodeUserSetup-x64-1.94.2.exe",
+      "mime": "application/x-msdownload",
+      "expect": "quiet"
+    },
+    {
+      "id": "L05-aka-ms-from-forum",
+      "story": "Microsoft's own short link (aka.ms) posted on Reddit → Visual Studio installer",
+      "referrer": "https://www.reddit.com/r/csharp/comments/abc/",
+      "originalUrl": "https://aka.ms/vs/17/release/vs_community.exe",
+      "url": "https://download.visualstudio.microsoft.com/download/pr/69e24482-3b48-44d3-af65-51f866a08313/vs_Community.exe",
+      "filename": "vs_Community.exe",
+      "mime": "application/x-msdownload",
+      "expect": "quiet"
+    },
+    {
+      "id": "L06-github-release",
+      "story": "GitHub releases page → objects.githubusercontent.com asset",
+      "referrer": "https://github.com/obsproject/obs-studio/releases",
+      "originalUrl": "https://github.com/obsproject/obs-studio/releases/download/31.0.0/OBS-Studio-31.0.0-Windows-Installer.exe",
+      "url": "https://objects.githubusercontent.com/github-production-release-asset-2e65be/51428583/1f2e3d4c",
+      "filename": "OBS-Studio-31.0.0-Windows-Installer.exe",
+      "mime": "application/octet-stream",
+      "expect": "quiet"
+    },
+    {
+      "id": "L07-github-linux-binary",
+      "story": "GitHub release of an extensionless Linux binary (R1 — always warns by design; score must stay low)",
+      "referrer": "https://github.com/derailed/k9s/releases",
+      "originalUrl": "https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_amd64",
+      "url": "https://objects.githubusercontent.com/github-production-release-asset-2e65be/167596393/9a8b7c6d",
+      "filename": "k9s_Linux_amd64",
+      "mime": "application/octet-stream",
+      "expect": "quiet"
+    },
+    {
+      "id": "L08-vlc-http-mirror",
+      "story": "videolan.org → get.videolan.org (HTTPS) → university mirror over plain HTTP",
+      "referrer": "https://www.videolan.org/vlc/download-windows.html",
+      "originalUrl": "https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.exe",
+      "url": "http://ftp.snt.utwente.nl/pub/software/videolan/vlc/3.0.21/win64/vlc-3.0.21-win64.exe",
+      "filename": "vlc-3.0.21-win64.exe",
+      "mime": "application/x-msdownload",
+      "expect": "quiet"
+    },
+    {
+      "id": "L09-ubuntu-http",
+      "story": "Ubuntu ISO from releases.ubuntu.com over plain HTTP",
+      "referrer": "https://ubuntu.com/download/desktop/thank-you",
+      "url": "http://releases.ubuntu.com/24.04.1/ubuntu-24.04.1-desktop-amd64.iso",
+      "filename": "ubuntu-24.04.1-desktop-amd64.iso",
+      "mime": "application/x-iso9660-image",
+      "totalBytes": 6100000000,
+      "expect": "quiet"
+    },
+    {
+      "id": "L10-python",
+      "story": "python.org downloads page → python.org/ftp",
+      "referrer": "https://www.python.org/downloads/",
+      "url": "https://www.python.org/ftp/python/3.13.0/python-3.13.0-amd64.exe",
+      "filename": "python-3.13.0-amd64.exe",
+      "mime": "application/x-msdownload",
+      "expect": "quiet"
+    },
+    {
+      "id": "L11-steam",
+      "story": "store.steampowered.com → Valve's steamstatic CDN",
+      "referrer": "https://store.steampowered.com/about/",
+      "url": "https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe",
+      "filename": "SteamSetup.exe",
+      "mime": "application/x-msdownload",
+      "expect": "quiet"
+    },
+    {
+      "id": "L12-discord-app",
+      "story": "discord.com/download → Discord's own app CDN (discordapp.net, NOT user attachments)",
+      "referrer": "https://discord.com/download",
+      "originalUrl": "https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x64",
+      "url": "https://stable.dl2.discordapp.net/distro/app/stable/win/x64/1.0.9168/DiscordSetup.exe",
+      "filename": "DiscordSetup.exe",
+      "mime": "application/x-msdownload",
+      "expect": "quiet"
+    },
+    {
+      "id": "L13-new-startup",
+      "story": "Two-month-old indie app domain, linked from Product Hunt",
+      "referrer": "https://www.producthunt.com/posts/tinynotes",
+      "url": "https://get.tinynotes.app/releases/TinyNotes-Setup-1.2.0.exe",
+      "filename": "TinyNotes-Setup-1.2.0.exe",
+      "mime": "application/x-msdownload",
+      "mockRdap": {
+        "score": -10,
+        "label": "62 days old (moderately new) (mocked)"
+      },
+      "expect": "quiet"
+    },
+    {
+      "id": "L14-chrome",
+      "story": "google.com/chrome → dl.google.com (same registered domain)",
+      "referrer": "https://www.google.com/chrome/",
+      "url": "https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D/update2/installers/ChromeSetup.exe",
+      "filename": "ChromeSetup.exe",
+      "mime": "application/x-msdownload",
+      "expect": "quiet"
+    },
+    {
+      "id": "L15-brave-extensionless",
+      "story": "brave.com → laptop-updates.brave.com extensionless link, name via Content-Disposition",
+      "referrer": "https://brave.com/download/",
+      "url": "https://laptop-updates.brave.com/latest/winx64",
+      "filename": "BraveBrowserSetup.exe",
+      "mime": "application/octet-stream",
+      "hiddenExt": true,
+      "expect": "quiet"
+    },
+    {
+      "id": "L16-7zip-sourceforge",
+      "story": "7-zip.org → SourceForge latest/download redirect (extensionless at start)",
+      "referrer": "https://www.7-zip.org/download.html",
+      "originalUrl": "https://sourceforge.net/projects/sevenzip/files/latest/download",
+      "url": "https://downloads.sourceforge.net/project/sevenzip/7-Zip/24.08/7z2408-x64.exe",
+      "filename": "7z2408-x64.exe",
+      "mime": "application/x-msdownload",
+      "hiddenExt": true,
+      "expect": "quiet"
+    },
+    {
+      "id": "A01-discord-attachment-extensionless",
+      "story": "URLhaus #3982093: Discord attachment, no extension, octet-stream (R1 always warns)",
+      "referrer": "https://discord.com/channels/1061/1077",
+      "url": "https://cdn.discordapp.com/attachments/1561097940687265932/1561098130198495273/6962f1be0c?ex=6add066e&is=6adbb4ee&hm=a5064184",
+      "filename": "6962f1be0c",
+      "mime": "application/octet-stream",
+      "expect": "flag"
+    },
+    {
+      "id": "A02-shortener-young-hidden",
+      "story": "Webmail → bit.ly → 5-day-old .top domain, extensionless link, update.exe",
+      "referrer": "https://mail.google.com/",
+      "originalUrl": "https://bit.ly/3Fq9xYz",
+      "url": "https://get-secure-update.top/dl/7741",
+      "filename": "update.exe",
+      "mime": "application/octet-stream",
+      "hiddenExt": true,
+      "mockRdap": {
+        "score": -30,
+        "label": "5 days old (very new domain) (mocked)"
+      },
+      "expect": "flag"
+    },
+    {
+      "id": "A03-github-raw-script-from-chat",
+      "story": "Discord chat → raw GitHub PowerShell 'FPS unlocker' (common lure)",
+      "referrer": "https://discord.com/channels/1061/1077",
+      "url": "https://raw.githubusercontent.com/k1ll3r-tools/fps-unlocker/main/install.ps1",
+      "filename": "install.ps1",
+      "mime": "text/plain",
+      "expect": "flag"
+    },
+    {
+      "id": "A04-weak-trio-webmail",
+      "story": "Webmail → 2-month-old domain, tokenised PHP download link: only small oddities",
+      "referrer": "https://outlook.live.com/mail/0/",
+      "url": "https://download-center-app.com/files/get.php?id=88231&token=a8f3e1c2d9b7a6f5e4d3c2b1",
+      "filename": "client_setup.exe",
+      "mime": "application/x-msdownload",
+      "mockRdap": {
+        "score": -10,
+        "label": "62 days old (moderately new) (mocked)"
+      },
+      "expect": "flag"
+    },
+    {
+      "id": "A05-cdn-keyword-typosquat",
+      "story": "Search ad → 'cdn-…-update' look-alike on a 5-day-old domain, extensionless (the word CDN must not help)",
+      "referrer": "https://www.bing.com/",
+      "url": "https://cdn-ccleaner-update.top/bits/productfamily/ccsetup",
+      "filename": "ccsetup.exe",
+      "mime": "application/octet-stream",
+      "hiddenExt": true,
+      "mockRdap": {
+        "score": -30,
+        "label": "5 days old (very new domain) (mocked)"
+      },
+      "expect": "flag"
+    },
+    {
+      "id": "A06-compromised-site-pdf-exe",
+      "story": "Established (hacked) site serves invoice.pdf that is really a program",
+      "referrer": "https://mail.google.com/",
+      "url": "https://www.example-dentist.nl/wp-content/uploads/2026/10/invoice.pdf",
+      "filename": "invoice.pdf",
+      "mime": "application/x-msdownload",
+      "expect": "flag"
+    },
+    {
+      "id": "A07-discord-attachment-exe",
+      "story": "Discord attachment 'Nitro generator' .exe from a chat link",
+      "referrer": "https://discord.com/channels/1061/1077",
+      "url": "https://cdn.discordapp.com/attachments/1561097940687265932/1561098130198495273/Nitro_Generator.exe",
+      "filename": "Nitro_Generator.exe",
+      "mime": "application/x-msdownload",
+      "expect": "flag"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Tools dependencies (npm install in tools/) and their artefacts
+node_modules/
+coverage/
+.jscpd/
+# Dev-only symlinks created by tools/run-knip.mjs at the repo root
+/package.json
+/node_modules
